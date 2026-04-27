@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soyeb IT Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0b0f1a;
+  --ink-soft: #3d4557;
+  --ink-muted: #7a8099;
+  --surface: #ffffff;
+  --surface-2: #f7f8fc;
+  --surface-3: #eef0f7;
+  --accent: #0057ff;
+  --accent-light: #e8eeff;
+  --accent-glow: rgba(0,87,255,0.12);
+  --gold: #f5a623;
+  --border: rgba(0,0,0,0.08);
+  --border-med: rgba(0,0,0,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 100px;
+  font-size: 16px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ---- TYPOGRAPHY ---- */
+h1, h2, h3, h4, .logo-text {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* ---- HEADER ---- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  height: 68px;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+}
+.logo-text span { color: var(--accent); }
+
+nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+nav a {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+nav a:hover, nav a.active {
+  color: var(--ink);
+  background: var(--surface-2);
+}
+
+.nav-cta {
+  background: var(--accent) !important;
+  color: white !important;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+  margin-left: 8px;
+}
+.nav-cta:hover { background: #0042cc !important; transform: translateY(-1px); }
+
+/* ---- TABS ---- */
+.tab { display: none; }
+.tab.active { display: block; }
+
+/* ---- HOME ---- */
+.hero-section {
+  min-height: calc(100vh - 68px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 48px;
+  gap: 60px;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-shape {
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,87,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-bg-dots {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  height: 420px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero-left h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.hero-left h1 em {
+  font-style: normal;
+  color: var(--accent);
+  position: relative;
+}
+
+.hero-left p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover { background: #0042cc; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,87,255,0.3); }
+.btn-primary .arrow { font-size: 1.1rem; transition: transform 0.2s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--border-med);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { background: var(--surface-2); border-color: var(--ink); }
+
+.hero-stats {
+  margin-top: 52px;
+  display: flex;
+  gap: 40px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.stat-item {}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* Hero right visual */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card-stack {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+}
+
+.hcard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  animation: floatCard 6s ease-in-out infinite;
+}
+.hcard:nth-child(2) { animation-delay: -2s; }
+.hcard:nth-child(3) { animation-delay: -4s; }
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hcard-main { margin-bottom: 16px; }
+.hcard-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+.hcard h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.hcard p { font-size: 0.88rem; color: var(--ink-soft); font-weight: 300; }
+
+.hcard-mini {
+  position: absolute;
+  width: 220px;
+  padding: 16px 20px;
+}
+.hcard-mini:first-of-type { top: -20px; right: -20px; }
+.hcard-mini:last-of-type { bottom: -20px; left: -20px; }
+
+.mini-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+}
+.mini-icon svg { width: 18px; height: 18px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hcard-mini h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+.hcard-mini p { font-size: 0.78rem; color: var(--ink-muted); }
+
+/* ---- MARQUEE ---- */
+.marquee-section {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  overflow: hidden;
+  padding: 18px 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 36px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+/* ---- FEATURES GRID ---- */
+.features-section {
+  padding: 100px 48px;
+  background: var(--surface);
+}
+.section-header {
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--accent);
+}
+.section-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s;
+  cursor: default;
+}
+.feature-card:hover {
+  background: var(--surface);
+  border-color: rgba(0,87,255,0.2);
+  box-shadow: 0 8px 40px rgba(0,87,255,0.08);
+  transform: translateY(-4px);
+}
+.feature-card.accent-card {
+  background: var(--ink);
+  border-color: transparent;
+}
+.feature-card.accent-card .fc-icon { background: rgba(255,255,255,0.1); }
+.feature-card.accent-card .fc-icon svg { stroke: white; }
+.feature-card.accent-card h3, .feature-card.accent-card p { color: white; }
+.feature-card.accent-card p { opacity: 0.65; }
+.feature-card.accent-card:hover { background: #0b0f1a; border-color: transparent; transform: translateY(-4px); }
+
+.fc-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.fc-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* ---- ABOUT ---- */
+.about-section {
+  padding: 100px 48px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-left h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+.about-left p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+.value-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: 'Syne', sans-serif;
+  color: var(--ink);
+}
+.value-chip::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.about-right {}
+.mission-card {
+  background: var(--ink);
+  color: white;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 24px;
+}
+.mission-card .section-label { color: rgba(255,255,255,0.5); }
+.mission-card .section-label::before { background: rgba(255,255,255,0.5); }
+.mission-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: white;
+}
+.mission-card p { color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.75; }
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.stat-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+.stat-card .num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.stat-card .lbl { font-size: 0.8rem; color: var(--ink-muted); margin-top: 6px; }
+
+/* ---- SERVICES ---- */
+.services-section {
+  padding: 100px 48px;
+  background: var(--surface-2);
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 64px;
+}
+
+.service-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.service-item:hover { border-color: rgba(0,87,255,0.25); box-shadow: 0 4px 24px rgba(0,87,255,0.08); }
+
+.service-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 40px;
+}
+
+.service-header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.service-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+  min-width: 28px;
+}
+
+.service-title-block {}
+.service-title-block h3 { font-size: 1.4rem; font-weight: 700; color: var(--ink); }
+.service-title-block p { font-size: 0.88rem; color: var(--ink-muted); font-weight: 300; margin-top: 4px; }
+
+.service-arrow {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-med);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.service-arrow svg { width: 16px; height: 16px; fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s; }
+.service-item.open .service-arrow { background: var(--accent); border-color: var(--accent); }
+.service-item.open .service-arrow svg { stroke: white; transform: rotate(45deg); }
+
+.service-body {
+  display: none;
+  padding: 0 40px 40px;
+  border-top: 1px solid var(--border);
+}
+.service-item.open .service-body { display: flex; gap: 40px; align-items: start; }
+
+.service-body img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+.service-body-text { padding-top: 20px; }
+.service-body-text p { font-size: 0.95rem; color: var(--ink-soft); font-weight: 300; line-height: 1.8; margin-bottom: 20px; }
+
+.service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.service-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-light);
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+/* ---- CAREER ---- */
+.career-section {
+  padding: 100px 48px;
+}
+
+.career-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border-med);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  min-width: 300px;
+  transition: border-color 0.2s;
+}
+.search-bar:focus-within { border-color: var(--accent); background: var(--surface); }
+.search-bar svg { width: 18px; height: 18px; fill: none; stroke: var(--ink-muted); stroke-width: 2; flex-shrink: 0; }
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  width: 100%;
+}
+.search-bar input::placeholder { color: var(--ink-muted); }
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.job-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.job-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.job-card:hover { border-color: rgba(0,87,255,0.2); box-shadow: 0 8px 32px rgba(0,87,255,0.1); transform: translateY(-4px); }
+.job-card:hover::after { transform: scaleX(1); }
+
+.job-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+}
+.badge-blue { background: var(--accent-light); color: var(--accent); }
+.badge-green { background: #e6f7f0; color: #0a7c4e; }
+.badge-orange { background: #fff3e6; color: #c05200; }
+
+.job-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.job-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.job-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+.job-meta svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.job-footer { display: flex; justify-content: space-between; align-items: center; }
+.job-salary {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.apply-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.apply-btn:hover { background: #0042cc; transform: translateY(-1px); }
+
+/* ---- MODAL ---- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(11,15,26,0.5);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.open { display: flex; }
+
+.modal-box {
+  background: var(--surface);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-head {
+  background: var(--ink);
+  color: white;
+  padding: 32px 36px 28px;
+  position: relative;
+}
+.modal-head h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+.modal-head p { font-size: 0.88rem; color: rgba(255,255,255,0.55); }
+
+.modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.2); }
+
+.modal-body {
+  padding: 32px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-field label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.form-field input, .form-field select {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-med);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--surface);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-field input:focus, .form-field select:focus { border-color: var(--accent); }
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1.5px dashed var(--border-med);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+.file-label:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+.file-label svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; flex-shrink: 0; }
+.file-label input { display: none; }
+
+.modal-submit {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 6px;
+}
+.modal-submit:hover { background: #0042cc; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,87,255,0.3); }
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--ink);
+  color: white;
+  padding: 60px 48px 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 32px;
+}
+
+.footer-brand .logo-text { font-size: 1.3rem; color: white; margin-bottom: 16px; display: block; }
+.footer-brand .logo-text span { color: var(--accent); }
+.footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.75; max-width: 280px; }
+
+.footer-col h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.footer-col a:hover { color: white; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+.footer-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+}
+.footer-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+/* ---- PAGE ANIMATIONS ---- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tab.active > * { animation: fadeUp 0.5s ease forwards; }
+.tab.active > *:nth-child(2) { animation-delay: 0.06s; }
+.tab.active > *:nth-child(3) { animation-delay: 0.12s; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  header { padding: 0 24px; }
+  .hero-section { grid-template-columns: 1fr; padding: 60px 24px; min-height: auto; gap: 40px; }
+  .hero-bg-dots, .hero-bg-shape { display: none; }
+  .hero-visual { display: none; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .jobs-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .features-section, .about-section, .services-section, .career-section { padding: 80px 24px; }
+}
+@media (max-width: 600px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .jobs-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  nav a:not(.nav-cta) { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .service-body.active { flex-direction: column; }
+  .service-body img { width: 100%; height: 180px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-text">Soyeb <span>IT Services</span></div>
+  <nav>
+    <a onclick="openTab('home')" class="active" id="nav-home">Home</a>
+    <a onclick="openTab('about')" id="nav-about">About</a>
+    <a onclick="openTab('services')" id="nav-services">Services</a>
+    <a onclick="openTab('career')" id="nav-career">Career</a>
+    <button class="nav-cta" onclick="openTab('career')">View Jobs →</button>
+  </nav>
+</header>
+
+<!-- ========== HOME ========== -->
+<div id="home" class="tab active">
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="hero-bg-shape"></div>
+
+    <div class="hero-left">
+      <div class="hero-eyebrow">Global IT Recruitment</div>
+      <h1>Hire Smarter.<br><em>Scale Faster.</em><br>Succeed Globally.</h1>
+      <p>Navigating global hiring demands deep knowledge of compliance, workforce trends, and market dynamics. We simplify it so you can focus on what matters.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openTab('services')">Explore Services <span class="arrow">→</span></button>
+        <button class="btn-secondary" onclick="openTab('career')">Browse Jobs</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Placements made</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Client satisfaction</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Markets served</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-main">
+          <div class="hcard-tag">Active Placement</div>
+          <h4>Senior DevOps Engineer</h4>
+          <p>London · Full-time · Competitive salary + equity</p>
+        </div>
+        <div class="hcard hcard-mini" style="top:-24px;right:-24px;">
+          <div class="mini-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h5>Talent Network</h5>
+          <p>10,000+ vetted professionals</p>
+        </div>
+        <div class="hcard hcard-mini" style="bottom:-24px;left:-24px;">
+          <div class="mini-icon" style="background:#22c55e;">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h5>Compliance Ready</h5>
+          <p>UK right-to-work verified</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="marquee-dot"></span>IT Recruitment</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Contract Staffing</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>IT Consulting</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Compliance First</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Global Talent</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Fast Hiring</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>End-to-End Support</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>UK Specialists</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><span class="marquee-dot"></span>IT Recruitment</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Contract Staffing</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>IT Consulting</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Compliance First</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Global Talent</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>Fast Hiring</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>End-to-End Support</div>
+      <div class="marquee-item"><span class="marquee-dot"></span>UK Specialists</div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="features-section">
+    <div class="section-header">
+      <div class="section-label">Why choose us</div>
+      <h2>Everything you need to hire with confidence</h2>
+      <p>We combine global reach with deep local expertise for hiring solutions that are efficient, compliant, and precisely tailored.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card accent-card">
+        <div class="fc-icon" style="background:rgba(255,255,255,0.1);">
+          <svg viewBox="0 0 24 24" style="stroke:white;"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Speed Without Compromise</h3>
+        <p>Our streamlined process means your roles are filled faster — without sacrificing quality or compliance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Local Market Expertise</h3>
+        <p>Deep understanding of UK and global employment laws ensures smooth, risk-free hiring across every market.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Access to Top Talent</h3>
+        <p>We surface both active and passive candidates, giving you access to the best professionals in niche IT fields.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Compliance You Can Trust</h3>
+        <p>Every hire aligns with employment laws, data protection regulations, and right-to-work requirements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>End-to-End Support</h3>
+        <p>From talent sourcing to onboarding, we handle every step so you never have to manage the process alone.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Strategic Partnership</h3>
+        <p>We're not just a recruiter — we're a long-term partner invested in your business growth and hiring success.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ========== ABOUT ========== -->
+<div id="about" class="tab">
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-label">About us</div>
+        <h2>Connecting talent with opportunity since day one</h2>
+        <p>Soyeb IT Services was founded with a vision to connect exceptional talent with forward-thinking organisations. We specialise in IT staffing and consulting services on a global scale, with particular depth in the UK market.</p>
+        <p>Our approach is simple: understand your goals deeply, then find the people who make those goals achievable. We believe hiring is one of the most important investments a business makes — and we treat it that way.</p>
+        <div class="about-values">
+          <div class="value-chip">Global IT staffing expertise</div>
+          <div class="value-chip">Technology consulting</div>
+          <div class="value-chip">Client-focused delivery</div>
+          <div class="value-chip">Strong talent network</div>
+          <div class="value-chip">Scalable hiring solutions</div>
+          <div class="value-chip">End-to-end workforce support</div>
+          <div class="value-chip">Commitment to quality</div>
+          <div class="value-chip">Fast & efficient hiring</div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="mission-card">
+          <div class="section-label">Our mission</div>
+          <h3>To help businesses grow through the right people and the right technology.</h3>
+          <p>We bring together global reach, regulatory expertise, and a deep commitment to quality to deliver hiring outcomes that genuinely move businesses forward.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="num">500+</div>
+            <div class="lbl">Placements</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">12+</div>
+            <div class="lbl">Markets</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">98%</div>
+            <div class="lbl">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== SERVICES ========== -->
+<div id="services" class="tab">
+  <section class="services-section">
+    <div class="section-header">
+      <div class="section-label">What we do</div>
+      <h2>Services built around your hiring needs</h2>
+      <p>Three core offerings that cover every angle of IT talent — from permanent hires to flexible contracts to strategic consulting.</p>
+    </div>
+    <div class="services-list">
+
+      <div class="service-item open" onclick="toggleService(this)">
+        <div class="service-header">
+          <div class="service-header-left">
+            <span class="service-num">01</span>
+            <div class="service-title-block">
+              <h3>IT Recruitment</h3>
+              <p>Permanent & executive search across all technology disciplines</p>
+            </div>
+          </div>
+          <div class="service-arrow">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="IT Recruitment">
+          <div class="service-body-text">
+            <p>Finding the right IT talent goes beyond filling a role. We connect businesses with top professionals globally, ensuring both technical and cultural fit. Our access to deep talent pools and understanding of niche roles means we deliver candidates that genuinely move the needle.</p>
+            <div class="service-tags">
+              <span class="service-tag">Technical screening</span>
+              <span class="service-tag">Cultural fit assessment</span>
+              <span class="service-tag">Global talent pools</span>
+              <span class="service-tag">Niche IT roles</span>
+              <span class="service-tag">Executive search</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item" onclick="toggleService(this)">
+        <div class="service-header">
+          <div class="service-header-left">
+            <span class="service-num">02</span>
+            <div class="service-title-block">
+              <h3>Contract Staffing</h3>
+              <p>Flexible workforce solutions for projects of any scale or duration</p>
+            </div>
+          </div>
+          <div class="service-arrow">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="Contract Staffing">
+          <div class="service-body-text">
+            <p>Modern business demands flexibility. We provide pre-vetted contract professionals quickly, whether for a 3-month sprint or a multi-year programme. We handle compliance, onboarding, and ongoing support so you can focus entirely on delivery.</p>
+            <div class="service-tags">
+              <span class="service-tag">Pre-vetted contractors</span>
+              <span class="service-tag">Fast turnaround</span>
+              <span class="service-tag">Compliance managed</span>
+              <span class="service-tag">Scalable workforce</span>
+              <span class="service-tag">Project delivery support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item" onclick="toggleService(this)">
+        <div class="service-header">
+          <div class="service-header-left">
+            <span class="service-num">03</span>
+            <div class="service-title-block">
+              <h3>IT Consulting</h3>
+              <p>Strategic advisory to align technology investment with business outcomes</p>
+            </div>
+          </div>
+          <div class="service-arrow">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="IT Consulting">
+          <div class="service-body-text">
+            <p>Technology drives business growth — but only when it's aligned with strategy. We provide expert consulting that connects your IT capabilities to your business goals, supporting digital transformation, improving efficiency, and future-proofing your systems.</p>
+            <div class="service-tags">
+              <span class="service-tag">Digital transformation</span>
+              <span class="service-tag">IT strategy</span>
+              <span class="service-tag">Performance improvement</span>
+              <span class="service-tag">Risk reduction</span>
+              <span class="service-tag">Scalable solutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ========== CAREER ========== -->
+<div id="career" class="tab">
+  <section class="career-section">
+    <div class="career-top">
+      <div class="section-header" style="margin-bottom:0;">
+        <div class="section-label">Careers</div>
+        <h2>Find your next opportunity</h2>
+      </div>
+      <div class="search-bar">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="jobSearch" placeholder="Search roles..." onkeyup="filterJobs()">
+      </div>
+    </div>
+
+    <div class="jobs-grid" id="jobsGrid">
+
+      <div class="job-card" data-title="Frontend Engineer">
+        <div class="job-badge badge-blue">Engineering</div>
+        <h3>Frontend Engineer</h3>
+        <div class="job-meta">
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, UK</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Full-time</span>
+        </div>
+        <div class="job-footer">
+          <span class="job-salary">£70k – £90k</span>
+          <button class="apply-btn" onclick="openModal(event,'Frontend Engineer')">Apply Now</button>
+        </div>
+      </div>
+
+      <div class="job-card" data-title="Software Engineer">
+        <div class="job-badge badge-blue">Engineering</div>
+        <h3>Software Engineer</h3>
+        <div class="job-meta">
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Remote</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Full-time</span>
+        </div>
+        <div class="job-footer">
+          <span class="job-salary">£65k – £85k</span>
+          <button class="apply-btn" onclick="openModal(event,'Software Engineer')">Apply Now</button>
+        </div>
+      </div>
+
+      <div class="job-card" data-title="Backend Engineer">
+        <div class="job-badge badge-blue">Engineering</div>
+        <h3>Backend Engineer</h3>
+        <div class="job-meta">
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, UK</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Hybrid</span>
+        </div>
+        <div class="job-footer">
+          <span class="job-salary">£75k – £95k</span>
+          <button class="apply-btn" onclick="openModal(event,'Backend Engineer')">Apply Now</button>
+        </div>
+      </div>
+
+      <div class="job-card" data-title="AI Engineer">
+        <div class="job-badge badge-orange">AI / ML</div>
+        <h3>AI Engineer</h3>
+        <div class="job-meta">
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Remote</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Contract</span>
+        </div>
+        <div class="job-footer">
+          <span class="job-salary">£700 – £900/day</span>
+          <button class="apply-btn" onclick="openModal(event,'AI Engineer')">Apply Now</button>
+        </div>
+      </div>
+
+      <div class="job-card" data-title="Compliance Officer">
+        <div class="job-badge badge-green">Compliance</div>
+        <h3>Compliance Officer</h3>
+        <div class="job-meta">
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, UK</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Full-time</span>
+        </div>
+        <div class="job-footer">
+          <span class="job-salary">£55k – £70k</span>
+          <button class="apply-btn" onclick="openModal(event,'Compliance Officer')">Apply Now</button>
+        </div>
+      </div>
+
+      <div class="job-card" data-title="Security Engineer">
+        <div class="job-badge badge-orange">Security</div>
+        <h3>Security Engineer</h3>
+        <div class="job-meta">
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Hybrid</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Full-time</span>
+        </div>
+        <div class="job-footer">
+          <span class="job-salary">£80k – £100k</span>
+          <button class="apply-btn" onclick="openModal(event,'Security Engineer')">Apply Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="applyModal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Apply Now</h2>
+      <p id="modalRole">Frontend Engineer</p>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-field">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane">
+        </div>
+        <div class="form-field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Email Address</label>
+        <input type="email" placeholder="jane@example.com">
+      </div>
+      <div class="form-field">
+        <label>Contact Number</label>
+        <input type="tel" placeholder="+44 7700 000000">
+      </div>
+      <div class="form-field">
+        <label>Current Location</label>
+        <input type="text" placeholder="London, UK">
+      </div>
+      <div class="form-field">
+        <label>Upload CV / Resume</label>
+        <label class="file-label">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span>Click to upload your CV (PDF, DOC, DOCX)</span>
+          <input type="file" accept=".pdf,.doc,.docx">
+        </label>
+      </div>
+      <button class="modal-submit" onclick="submitApplication()">Submit Application</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text">Soyeb <span>IT Services</span></span>
+      <p>Connecting exceptional IT talent with forward-thinking organisations across the globe. Local expertise, worldwide reach.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a onclick="openTab('home')">Home</a>
+      <a onclick="openTab('about')">About Us</a>
+      <a onclick="openTab('services')">Services</a>
+      <a onclick="openTab('career')">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a>hello@soyebit.com</a>
+      <a>+44 20 0000 0000</a>
+      <a>London, United Kingdom</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Soyeb IT Services. All rights reserved.</p>
+    <div class="footer-badge">All systems operational</div>
+  </div>
+</footer>
+
+<script>
+function openTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('nav a[id^="nav-"]').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navLink = document.getElementById('nav-' + id);
+  if (navLink) navLink.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleService(el) {
+  el.classList.toggle('open');
+}
+
+function openModal(e, role) {
+  if (e) e.stopPropagation();
+  document.getElementById('modalRole').textContent = role || '';
+  document.getElementById('applyModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('applyModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('applyModal')) closeModal();
+}
+
+function filterJobs() {
+  const q = document.getElementById('jobSearch').value.toLowerCase();
+  document.querySelectorAll('.job-card').forEach(card => {
+    const title = card.dataset.title.toLowerCase();
+    card.style.display = title.includes(q) ? 'block' : 'none';
+  });
+}
+
+function submitApplication() {
+  const btn = document.querySelector('.modal-submit');
+  btn.textContent = 'Submitting…';
+  btn.style.opacity = '0.7';
+  setTimeout(() => {
+    btn.textContent = '✓ Application Submitted!';
+    btn.style.background = '#22c55e';
+    btn.style.opacity = '1';
+    setTimeout(() => {
+      closeModal();
+      btn.textContent = 'Submit Application';
+      btn.style.background = '';
+    }, 2000);
+  }, 1200);
+}
+</script>
+</body>
+</html>
