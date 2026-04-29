@@ -3,1477 +3,1723 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soyeb IT Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Soyeb IT Services — Global IT Recruitment & Staffing</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #0d1b4b;
-  --navy-mid: #162358;
-  --navy-light: #1e2f6e;
-  --sky: #6bcfff;
-  --sky-dim: rgba(107,207,255,0.12);
-  --sky-border: rgba(107,207,255,0.22);
-  --bg: #f0f4ff;
-  --bg2: #e4eaf8;
+  --ink: #080a0f;
+  --ink2: #0e1118;
+  --ink3: #13171f;
+  --gold: #c8a45a;
+  --gold2: #e8c878;
+  --gold3: #a8843a;
+  --gold-dim: rgba(200,164,90,0.10);
+  --gold-border: rgba(200,164,90,0.22);
+  --slate: #181c28;
+  --slate2: #1e2335;
   --white: #ffffff;
-  --text-on-navy: rgba(255,255,255,0.42);
-  --text-on-light: #6472a0;
-  --dark-text: #0d1b4b;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--bg);
-  color: var(--dark-text);
-  overflow-x: hidden;
-}
-
-/* ── HEADER ── */
-header {
-  background: var(--navy);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 56px;
-  height: 64px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid rgba(107,207,255,0.1);
-}
-
-.logo {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
-  font-size: 17px;
-  color: #fff;
-  letter-spacing: -0.02em;
-}
-.logo span { color: var(--sky); }
-
-nav { display: flex; align-items: center; gap: 6px; }
-
-nav button {
-  background: none;
-  border: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-on-navy);
-  cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.2s;
-  letter-spacing: 0.01em;
-}
-nav button:hover { color: #fff; background: rgba(255,255,255,0.06); }
-nav button.active { color: var(--sky); }
-
-.nav-cta {
-  background: var(--sky) !important;
-  color: var(--navy) !important;
-  font-weight: 700 !important;
-  padding: 8px 20px !important;
-  border-radius: 8px !important;
-  margin-left: 8px;
-}
-.nav-cta:hover { opacity: 0.9; background: var(--sky) !important; }
-
-/* ── SECTIONS ── */
-section { display: none; }
-section.active { display: block; }
-
-/* ── HOME HERO ── */
-.hero {
-  display: grid;
-  grid-template-columns: 52% 48%;
-  min-height: calc(100vh - 64px);
-}
-
-.hero-left {
-  background: var(--navy);
-  padding: 80px 56px 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-left::before {
-  content: '';
-  position: absolute;
-  top: -120px; right: -120px;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(107,207,255,0.07) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-left::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: -80px;
-  width: 300px; height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(107,207,255,0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--sky-dim);
-  border: 1px solid var(--sky-border);
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--sky);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  width: fit-content;
-  animation: fadeUp 0.5s ease both;
-}
-
-.chip-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--sky);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-
-.hero-h1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 58px;
-  font-weight: 800;
-  line-height: 1.07;
-  letter-spacing: -0.04em;
-  color: #fff;
-  margin-bottom: 22px;
-  animation: fadeUp 0.5s 0.1s ease both;
-}
-
-.hero-h1 em {
-  font-style: normal;
-  color: var(--sky);
-}
-
-.hero-sub {
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--text-on-navy);
-  line-height: 1.85;
-  max-width: 400px;
-  margin-bottom: 36px;
-  animation: fadeUp 0.5s 0.2s ease both;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 12px;
-  animation: fadeUp 0.5s 0.3s ease both;
-}
-
-.btn-primary {
-  background: var(--sky);
-  color: var(--navy);
-  padding: 13px 26px;
-  border-radius: 9px;
-  border: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: -0.01em;
-}
-.btn-primary:hover { transform: translateY(-1px); opacity: 0.92; }
-
-.btn-secondary {
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  padding: 13px 26px;
-  border-radius: 9px;
-  border: 1px solid rgba(255,255,255,0.12);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.btn-secondary:hover { background: rgba(255,255,255,0.1); }
-
-.trust-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 48px;
-  animation: fadeUp 0.5s 0.4s ease both;
-}
-
-.trust-avatars {
-  display: flex;
-}
-.trust-avatar {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  border: 2px solid var(--navy);
-  background: var(--navy-light);
-  margin-left: -8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: var(--sky);
-}
-.trust-avatar:first-child { margin-left: 0; }
-
-.trust-text {
-  font-size: 12px;
-  color: var(--text-on-navy);
-  line-height: 1.5;
-}
-.trust-text strong { color: #fff; font-weight: 600; }
-
-/* ── HERO RIGHT ── */
-.hero-right {
-  background: var(--bg);
-  padding: 60px 48px 60px 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.stat-box {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 22px 24px;
-  border: 1px solid #dde6ff;
-  transition: all 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-.stat-box::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--sky);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-.stat-box:hover::after { transform: scaleX(1); }
-.stat-box:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(13,27,75,0.08); }
-
-.stat-num {
-  font-size: 42px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-bottom: 5px;
-}
-.stat-num span { color: var(--sky); }
-
-.stat-label {
-  font-size: 12px;
-  color: var(--text-on-light);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.services-list-title {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-on-light);
-  margin-top: 8px;
-  margin-bottom: 2px;
-}
-
-.svc-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  border-top: 1px solid #dde6ff;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.svc-link:last-child { border-bottom: 1px solid #dde6ff; }
-.svc-link:hover .svc-name { color: var(--navy); }
-.svc-link:hover .svc-arrow { color: var(--sky); transform: translateX(3px); }
-
-.svc-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #2a3a7a;
-  transition: color 0.2s;
-}
-
-.svc-desc {
-  font-size: 11px;
-  color: var(--text-on-light);
-  margin-top: 2px;
-}
-
-.svc-arrow {
-  font-size: 18px;
-  color: #c0cae8;
-  transition: all 0.2s;
-  font-weight: 300;
-}
-
-/* ── FEATURES STRIP ── */
-.features-strip {
-  background: var(--navy);
-  padding: 56px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-}
-
-.feature-wrap {
-  background: var(--navy);
-  border-right: 1px solid rgba(107,207,255,0.1);
-  padding: 0 40px;
-}
-.feature-wrap:first-child { padding-left: 0; }
-.feature-wrap:last-child { border-right: none; padding-right: 0; }
-
-.feature-icon {
-  width: 40px; height: 40px;
-  background: var(--sky-dim);
-  border: 1px solid var(--sky-border);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 16px;
-}
-
-.feature-icon svg { width: 18px; height: 18px; fill: none; stroke: var(--sky); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-.feature-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-
-.feature-text {
-  font-size: 13px;
-  color: var(--text-on-navy);
-  line-height: 1.7;
-}
-
-/* ── ABOUT STRIP ── */
-.about-strip {
-  background: var(--bg);
-  padding: 80px 56px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sky);
-  margin-bottom: 16px;
-}
-
-.about-h2 {
-  font-family: 'Instrument Serif', serif;
-  font-size: 44px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--navy);
-  letter-spacing: -0.01em;
-  margin-bottom: 20px;
-}
-.about-h2 em { color: #2a5cff; font-style: italic; }
-
-.about-p {
-  font-size: 14px;
-  color: var(--text-on-light);
-  line-height: 1.9;
-  margin-bottom: 32px;
-}
-
-.about-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.about-card {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 24px;
-  border: 1px solid #dde6ff;
-}
-.about-card:first-child {
-  grid-column: span 2;
-  background: var(--navy);
-}
-.about-card-num { font-size: 36px; font-weight: 800; color: var(--sky); letter-spacing: -0.03em; margin-bottom: 4px; }
-.about-card-label { font-size: 12px; color: var(--text-on-light); }
-.about-card:first-child .about-card-label { color: var(--text-on-navy); }
-.about-card:first-child .about-card-num { color: var(--sky); }
-.about-card-text { font-size: 13px; font-weight: 600; color: var(--navy); margin-top: 8px; }
-.about-card:first-child .about-card-text { color: #fff; }
-
-/* ── SERVICES PAGE ── */
-.page-header {
-  background: var(--navy);
-  padding: 70px 56px 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 500px; height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(107,207,255,0.08) 0%, transparent 65%);
-}
-
-.page-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sky);
-  margin-bottom: 14px;
-}
-
-.page-h1 {
-  font-size: 52px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-.page-h1 em { font-style: normal; color: var(--sky); }
-
-.page-sub {
-  font-size: 15px;
-  color: var(--text-on-navy);
-  max-width: 520px;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-.services-grid {
-  padding: 64px 56px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.svc-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 32px 28px;
-  border: 1px solid #dde6ff;
-  transition: all 0.25s;
-  position: relative;
-  overflow: hidden;
-}
-.svc-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--navy);
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
-  z-index: 0;
-}
-.svc-card:hover::before { transform: translateY(0); }
-.svc-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(13,27,75,0.15); }
-.svc-card:hover .svc-card-icon { background: var(--sky-dim); border-color: var(--sky-border); }
-.svc-card:hover .svc-card-icon svg { stroke: var(--sky); }
-.svc-card:hover .svc-card-h { color: #fff; }
-.svc-card:hover .svc-card-p { color: var(--text-on-navy); }
-.svc-card:hover .svc-card-tag { background: rgba(107,207,255,0.12); color: var(--sky); border-color: transparent; }
-
-.svc-card > * { position: relative; z-index: 1; }
-
-.svc-card-icon {
-  width: 48px; height: 48px;
-  background: #eef2ff;
-  border: 1px solid #dde6ff;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 22px;
-  transition: all 0.25s;
-}
-.svc-card-icon svg { width: 20px; height: 20px; fill: none; stroke: var(--navy); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.25s; }
-
-.svc-card-h {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
-  transition: color 0.25s;
-}
-
-.svc-card-p {
-  font-size: 13px;
-  color: var(--text-on-light);
-  line-height: 1.8;
-  margin-bottom: 22px;
-  transition: color 0.25s;
-}
-
-.svc-features {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
-.svc-feature {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: var(--text-on-light);
-  transition: color 0.25s;
-}
-.svc-card:hover .svc-feature { color: rgba(255,255,255,0.55); }
-
-.svc-check {
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  background: #eef2ff;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.25s;
-}
-.svc-card:hover .svc-check { background: rgba(107,207,255,0.15); }
-.svc-check svg { width: 9px; height: 9px; stroke: var(--navy); stroke-width: 2.5; fill: none; transition: stroke 0.25s; }
-.svc-card:hover .svc-check svg { stroke: var(--sky); }
-
-.svc-card-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: #eef2ff;
-  color: var(--text-on-light);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  border: 1px solid #dde6ff;
-  transition: all 0.25s;
-}
-
-/* Process section */
-.process-section {
-  background: var(--navy);
-  padding: 72px 56px;
-}
-
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sky);
-  margin-bottom: 12px;
-}
-
-.section-h2 {
-  font-size: 38px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.03em;
-  margin-bottom: 48px;
-  max-width: 480px;
-  line-height: 1.15;
-}
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: rgba(107,207,255,0.08);
-}
-
-.step {
-  background: var(--navy);
-  padding: 32px 28px;
-  position: relative;
-}
-
-.step-num {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--sky);
-  margin-bottom: 14px;
-}
-
-.step-h { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.step-p { font-size: 12px; color: var(--text-on-navy); line-height: 1.7; }
-
-/* ── CAREER PAGE ── */
-.career-intro {
-  background: var(--navy);
-  padding: 70px 56px 60px;
-  position: relative;
-  overflow: hidden;
-}
-.career-intro::before {
-  content: '';
-  position: absolute;
-  top: -120px; right: -80px;
-  width: 480px; height: 480px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(107,207,255,0.07) 0%, transparent 65%);
-}
-
-.career-grid {
-  padding: 56px;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 32px;
-  align-items: start;
-}
-
-.jobs-list { display: flex; flex-direction: column; gap: 14px; }
-
-.job-card {
-  background: var(--white);
-  border-radius: 14px;
-  border: 1px solid #dde6ff;
-  padding: 26px 28px;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-.job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(13,27,75,0.08); border-color: #b0c0e8; }
-
-.job-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-
-.job-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: -0.02em;
-  margin-bottom: 3px;
-}
-
-.job-company {
-  font-size: 12px;
-  color: var(--text-on-light);
-}
-
-.job-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-.badge-full { background: #e8f5ff; color: #0d6efd; }
-.badge-contract { background: #fff3e0; color: #e65c00; }
-.badge-remote { background: #e8f5e9; color: #1b7a2c; }
-
-.job-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-
-.job-tag {
-  padding: 3px 10px;
-  border-radius: 4px;
-  background: #eef2ff;
-  color: var(--text-on-light);
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.job-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid #eef2ff;
-}
-
-.job-location { font-size: 12px; color: var(--text-on-light); }
-
-.apply-btn {
-  background: var(--navy);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 7px;
-  border: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.apply-btn:hover { background: var(--sky); color: var(--navy); }
-
-/* Sidebar */
-.career-sidebar { display: flex; flex-direction: column; gap: 20px; }
-
-.sidebar-card {
-  background: var(--white);
-  border-radius: 14px;
-  border: 1px solid #dde6ff;
-  padding: 24px;
-}
-
-.sidebar-card h3 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
-}
-
-.sidebar-card p {
-  font-size: 13px;
-  color: var(--text-on-light);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-.sidebar-card.dark-card {
-  background: var(--navy);
-}
-.sidebar-card.dark-card h3 { color: #fff; }
-.sidebar-card.dark-card p { color: var(--text-on-navy); }
-
-.sidebar-stat { display: flex; flex-direction: column; gap: 14px; }
-.sstat { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid #eef2ff; }
-.sstat-label { font-size: 12px; color: var(--text-on-light); }
-.sstat-val { font-size: 14px; font-weight: 700; color: var(--navy); }
-
-/* ── MODAL ── */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(13,27,75,0.6);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
-}
-.modal-overlay.open { display: flex; }
-
-.modal {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 40px;
-  width: 90%;
-  max-width: 480px;
-  position: relative;
-  animation: fadeUp 0.25s ease;
-}
-
-.modal-header { margin-bottom: 28px; }
-.modal-title { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 4px; }
-.modal-sub { font-size: 13px; color: var(--text-on-light); }
-
-.modal-close {
-  position: absolute;
-  top: 20px; right: 20px;
-  background: #eef2ff;
-  border: none;
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-  color: var(--text-on-light);
-  display: flex; align-items: center; justify-content: center;
-  line-height: 1;
-}
-.modal-close:hover { background: #dde6ff; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group.full { grid-column: span 2; }
-
-.form-label { font-size: 12px; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; }
-
-.form-input {
-  padding: 11px 14px;
-  border-radius: 9px;
-  border: 1.5px solid #dde6ff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  color: var(--navy);
-  background: var(--bg);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.form-input:focus { border-color: var(--sky); background: #fff; }
-
-.file-upload {
-  border: 1.5px dashed #c0cae8;
-  border-radius: 9px;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  background: var(--bg);
-}
-.file-upload:hover { border-color: var(--sky); background: #eef8ff; }
-.file-upload-text { font-size: 13px; color: var(--text-on-light); }
-.file-upload-text span { color: var(--sky); font-weight: 600; }
-.file-upload input { display: none; }
-
-.modal-submit {
-  width: 100%;
-  margin-top: 20px;
-  background: var(--navy);
-  color: #fff;
-  padding: 14px;
-  border-radius: 10px;
-  border: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: -0.01em;
-}
-.modal-submit:hover { background: var(--sky); color: var(--navy); }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--navy);
-  padding: 60px 56px 32px;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-  padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.footer-brand .logo {
-  display: block;
-  margin-bottom: 14px;
-}
-
-.footer-brand p {
-  font-size: 13px;
-  color: var(--text-on-navy);
-  line-height: 1.8;
-  max-width: 240px;
-}
-
-.footer-col h4 {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 18px;
-}
-
-.footer-col a {
-  display: block;
-  font-size: 13px;
-  color: var(--text-on-navy);
-  text-decoration: none;
-  margin-bottom: 10px;
-  transition: color 0.2s;
-  cursor: pointer;
-}
-.footer-col a:hover { color: var(--sky); }
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
-.footer-right { font-size: 12px; color: rgba(255,255,255,0.25); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  header { padding: 0 24px; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 56px 24px; }
-  .hero-right { padding: 40px 24px; }
-  .hero-h1 { font-size: 40px; }
-  .features-strip { grid-template-columns: 1fr; padding: 40px 24px; gap: 32px; }
-  .feature-wrap { padding: 0; border-right: none; border-bottom: 1px solid rgba(107,207,255,0.1); padding-bottom: 28px; }
-  .feature-wrap:last-child { border-bottom: none; padding-bottom: 0; }
-  .about-strip { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
-  .services-grid { grid-template-columns: 1fr; padding: 40px 24px; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .career-grid { grid-template-columns: 1fr; padding: 40px 24px; }
-  .page-header, .career-intro { padding: 50px 24px 40px; }
-  .footer-top { grid-template-columns: 1fr 1fr; padding: 0 24px; gap: 32px; }
-  footer { padding: 48px 24px 24px; }
+  --offwhite: #f5f2ec;
+  --muted: rgba(255,255,255,0.40);
+  --dim: rgba(255,255,255,0.18);
+  --light: #8892a4;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(200,164,90,0.16);
+  --radius: 12px;
+  --radius2: 18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+/* ═══ NOISE OVERLAY ═══ */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ═══ HEADER ═══ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:68px;padding:0 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,10,15,0.88);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  transition:all .3s;
+}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer}
+.logo-gem{
+  width:36px;height:36px;background:var(--gold);
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-gem svg{width:17px;height:17px;fill:var(--ink)}
+.logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;letter-spacing:-0.01em;line-height:1.1}
+.logo-text span{display:block;font-size:9.5px;font-weight:400;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;margin-top:2px;font-family:'DM Sans',sans-serif}
+nav{display:flex;align-items:center;gap:2px}
+.nav-btn{
+  background:none;border:none;font-family:'DM Sans',sans-serif;
+  font-size:13px;color:var(--muted);cursor:pointer;
+  padding:7px 15px;border-radius:7px;transition:all .2s;letter-spacing:.02em;
+}
+.nav-btn:hover,.nav-btn.active{color:var(--white);background:rgba(255,255,255,0.05)}
+.nav-cta{
+  background:var(--gold)!important;color:var(--ink)!important;
+  font-weight:600!important;margin-left:8px;
+  border-radius:8px!important;
+}
+.nav-cta:hover{background:var(--gold2)!important;transform:translateY(-1px)}
+
+/* ═══ PAGES ═══ */
+.page{display:none;padding-top:68px;min-height:100vh}
+.page.active{display:block}
+
+/* ═══ HOME ═══ */
+.hero{
+  min-height:calc(100vh - 68px);
+  display:grid;grid-template-columns:58% 42%;
+  position:relative;
+}
+.hero-left{
+  padding:90px 60px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;background:var(--ink);
+}
+.hero-left::before{
+  content:'';position:absolute;top:-180px;right:-180px;
+  width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,164,90,.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-left::after{
+  content:'';position:absolute;bottom:-120px;left:-80px;
+  width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,164,90,.04) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-ribbon{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:3px;padding:7px 15px;
+  font-size:10.5px;font-weight:500;color:var(--gold);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:32px;width:fit-content;
+  animation:fadeUp .6s ease both;
+}
+.hero-ribbon svg{width:13px;height:13px;fill:var(--gold)}
+.hero-label{
+  font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  animation:fadeUp .6s .05s ease both;
+}
+.hero-h1{
+  font-family:'Syne',sans-serif;font-size:66px;font-weight:800;
+  line-height:.97;letter-spacing:-.05em;color:var(--white);margin-bottom:26px;
+  animation:fadeUp .6s .1s ease both;
+}
+.hero-h1 .gold{color:var(--gold)}
+.hero-h1 .outline{-webkit-text-stroke:1.5px rgba(255,255,255,.25);color:transparent}
+.hero-body{
+  font-size:14.5px;font-weight:300;color:var(--muted);line-height:1.95;
+  max-width:430px;margin-bottom:38px;
+  animation:fadeUp .6s .15s ease both;
+}
+.hero-actions{display:flex;gap:12px;margin-bottom:52px;animation:fadeUp .6s .2s ease both}
+.btn-gold{
+  background:var(--gold);color:var(--ink);padding:13px 26px;
+  border-radius:8px;border:none;font-family:'DM Sans',sans-serif;
+  font-size:13.5px;font-weight:600;cursor:pointer;transition:all .2s;
+}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--white);padding:13px 26px;
+  border-radius:8px;border:1px solid rgba(255,255,255,.14);
+  font-family:'DM Sans',sans-serif;font-size:13.5px;cursor:pointer;transition:all .2s;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.trust-row{display:flex;align-items:center;gap:18px;animation:fadeUp .6s .25s ease both}
+.trust-badge{
+  display:flex;align-items:center;gap:7px;
+  padding:7px 13px;border-radius:6px;
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  font-size:10.5px;color:var(--muted);letter-spacing:.04em;
+}
+.trust-badge svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-right{
+  background:var(--slate);
+  border-left:1px solid var(--border);
+  padding:70px 50px;
+  display:flex;flex-direction:column;justify-content:center;gap:18px;
+}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.metric{
+  background:var(--ink2);border:1px solid var(--border);border-radius:10px;
+  padding:22px 18px;cursor:default;transition:all .25s;position:relative;overflow:hidden;
+}
+.metric::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.metric:hover::after{transform:scaleX(1)}
+.metric:hover{border-color:var(--gold-border);transform:translateY(-2px)}
+.metric-n{
+  font-family:'Syne',sans-serif;font-size:44px;font-weight:800;
+  color:var(--white);letter-spacing:-.04em;line-height:1;margin-bottom:4px;
+}
+.metric-n span{color:var(--gold)}
+.metric-l{font-size:10.5px;color:var(--light);letter-spacing:.04em}
+
+.exp-title{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--light);margin-top:6px;margin-bottom:2px}
+.exp-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:13px 0;border-top:1px solid var(--border);
+  cursor:pointer;transition:all .2s;
+}
+.exp-item:last-child{border-bottom:1px solid var(--border)}
+.exp-item:hover .exp-n{color:var(--gold)}
+.exp-item:hover .exp-arr{color:var(--gold);transform:translateX(4px)}
+.exp-n{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.8);transition:color .2s}
+.exp-s{font-size:10.5px;color:var(--light);margin-top:2px}
+.exp-arr{color:var(--border);font-size:17px;transition:all .2s}
+
+/* ═══ MARQUEE ═══ */
+.marquee{background:var(--gold);padding:13px 0;overflow:hidden;display:flex}
+.marquee-inner{display:flex;animation:marquee 30s linear infinite;white-space:nowrap}
+.marquee-item{
+  font-family:'Syne',sans-serif;font-size:11.5px;font-weight:700;
+  color:var(--ink);letter-spacing:.1em;text-transform:uppercase;
+  padding:0 36px;display:flex;align-items:center;gap:10px;
+}
+.mdot{width:3px;height:3px;border-radius:50%;background:rgba(8,10,15,.35)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ SECTION TITLES ═══ */
+.sec-eye{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:11px;font-weight:500}
+.sec-h{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1.12;color:var(--white);margin-bottom:46px;max-width:480px}
+.sec-h em{color:var(--gold);font-style:normal}
+
+/* ═══ AWARDS ═══ */
+.awards-band{
+  background:var(--slate);padding:60px;
+  display:grid;grid-template-columns:1fr 2fr;gap:56px;align-items:center;
+}
+.awards-h{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1.15;color:var(--white);margin-bottom:14px}
+.awards-p{font-size:13px;color:var(--muted);line-height:1.85}
+.awards-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.award-card{
+  background:var(--ink2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px 18px;transition:all .25s;
+}
+.award-card:hover{border-color:var(--gold-border);transform:translateY(-3px)}
+.award-icon{
+  width:38px;height:38px;background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:13px;
+}
+.award-icon svg{width:17px;height:17px;fill:var(--gold)}
+.award-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px}
+.award-year{font-size:10.5px;color:var(--gold);font-weight:500;letter-spacing:.06em}
+.award-desc{font-size:11.5px;color:var(--muted);line-height:1.65;margin-top:7px}
+
+/* ═══ ABOUT ═══ */
+.about-wrap{padding:90px 60px;display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+.about-h{font-family:'Syne',sans-serif;font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1.08;margin-bottom:20px}
+.about-h em{font-style:italic;color:var(--gold)}
+.about-body{font-size:13.5px;color:var(--muted);line-height:1.95;margin-bottom:32px}
+.about-pts{display:flex;flex-direction:column;gap:13px;margin-bottom:34px}
+.about-pt{display:flex;align-items:flex-start;gap:11px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.apt-icon{width:20px;height:20px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.apt-icon svg{width:9px;height:9px;stroke:var(--gold);stroke-width:2.5;fill:none}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.astat{background:var(--slate);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;transition:all .2s}
+.astat:hover{border-color:var(--gold-border)}
+.astat.wide{grid-column:span 2;background:var(--gold);border-color:transparent}
+.astat-n{font-family:'Syne',sans-serif;font-size:46px;font-weight:800;letter-spacing:-.04em;color:var(--white);line-height:1;margin-bottom:4px}
+.astat.wide .astat-n{color:var(--ink)}
+.astat-l{font-size:11.5px;color:var(--muted)}
+.astat.wide .astat-l{color:rgba(8,10,15,.5)}
+.astat.wide .astat-sub{font-size:12.5px;font-weight:600;color:var(--ink);margin-top:5px}
+
+/* ═══ SERVICES PAGE ═══ */
+.page-hero{
+  background:var(--slate);padding:84px 60px 68px;
+  position:relative;overflow:hidden;
+}
+.page-hero::after{
+  content:'';position:absolute;top:-180px;right:-180px;
+  width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,164,90,.07) 0%,transparent 65%);pointer-events:none;
+}
+.page-h1{font-family:'Syne',sans-serif;font-size:56px;font-weight:800;letter-spacing:-.04em;line-height:1.07;color:var(--white);margin-bottom:16px}
+.page-h1 em{color:var(--gold);font-style:normal}
+.page-sub{font-size:14.5px;color:var(--muted);max-width:540px;line-height:1.85;font-weight:300}
+
+.svcs-grid{padding:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{
+  background:var(--slate);border:1px solid var(--border);
+  border-radius:var(--radius2);padding:30px 26px;
+  transition:all .35s;position:relative;overflow:hidden;cursor:pointer;
+}
+.svc::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold3) 100%);
+  transform:translateY(100%);transition:transform .4s ease;z-index:0;
+}
+.svc:hover::before{transform:translateY(0)}
+.svc:hover{transform:translateY(-4px);box-shadow:0 22px 56px rgba(0,0,0,.4)}
+.svc:hover .svc-icon{background:rgba(8,10,15,.18);border-color:rgba(8,10,15,.18)}
+.svc:hover .svc-icon svg{stroke:var(--ink)}
+.svc:hover .svc-h,.svc:hover .svc-p,.svc:hover .svc-li{color:var(--ink);opacity:.85}
+.svc:hover .svc-h{opacity:1}
+.svc:hover .svc-check{background:rgba(8,10,15,.15)}
+.svc:hover .svc-check svg{stroke:var(--ink)}
+.svc:hover .svc-tag{background:rgba(8,10,15,.15);color:var(--ink);border-color:transparent}
+.svc>*{position:relative;z-index:1}
+.svc-icon{width:46px;height:46px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:all .3s}
+.svc-icon svg{width:19px;height:19px;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
+.svc-h{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:9px;transition:color .3s}
+.svc-p{font-size:12.5px;color:var(--muted);line-height:1.85;margin-bottom:18px;transition:color .3s}
+.svc-list{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.svc-li{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);transition:color .3s}
+.svc-check{width:15px;height:15px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+.svc-check svg{width:8px;height:8px;stroke:var(--gold);stroke-width:2.5;fill:none}
+.svc-tag{display:inline-block;padding:4px 11px;border-radius:20px;background:var(--gold-dim);color:var(--gold);font-size:10.5px;font-weight:600;letter-spacing:.06em;border:1px solid var(--gold-border);transition:all .3s}
+
+/* ═══ INVOICE ═══ */
+.invoice-sec{padding:60px;background:var(--ink2);border-top:1px solid var(--border)}
+.invoice-h{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--white);margin-bottom:7px}
+.invoice-sub{font-size:13.5px;color:var(--muted);margin-bottom:38px;max-width:480px;line-height:1.75}
+.invoice-opts{display:flex;gap:22px;max-width:780px}
+.inv-opt{
+  flex:1;background:var(--slate);border:1px solid var(--border);
+  border-radius:var(--radius2);padding:34px 30px;cursor:pointer;
+  transition:all .35s;text-align:left;position:relative;overflow:hidden;
+}
+.inv-opt::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold),var(--gold3));
+  opacity:0;transition:opacity .35s;
+}
+.inv-opt:hover::before{opacity:1}
+.inv-opt:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(0,0,0,.3)}
+.inv-opt:hover .ii,.inv-opt:hover .ih,.inv-opt:hover .ip{color:var(--ink)}
+.inv-opt:hover .ii-icon{background:rgba(8,10,15,.18);border-color:transparent}
+.inv-opt:hover .ii-icon svg{stroke:var(--ink)}
+.inv-opt>*{position:relative;z-index:1}
+.ii-icon{width:50px;height:50px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .3s}
+.ii-icon svg{width:21px;height:21px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
+.ih{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;color:var(--white);margin-bottom:7px;transition:color .3s}
+.ip{font-size:12.5px;color:var(--muted);line-height:1.75;transition:color .3s}
+
+/* ═══ PROCESS ═══ */
+.process-sec{background:var(--slate);padding:76px 60px;border-top:1px solid var(--border)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.proc{background:var(--slate);padding:30px 24px}
+.proc-n{font-family:'Syne',sans-serif;font-size:46px;font-weight:800;color:rgba(200,164,90,.15);letter-spacing:-.04em;line-height:1;margin-bottom:14px}
+.proc-h{font-size:14.5px;font-weight:600;color:var(--white);margin-bottom:7px}
+.proc-p{font-size:11.5px;color:var(--muted);line-height:1.75}
+
+/* ═══ CAREER PAGE ═══ */
+.career-layout{padding:52px 60px;display:grid;grid-template-columns:1fr 320px;gap:26px;align-items:start}
+.jobs-list{display:flex;flex-direction:column;gap:13px}
+.job-card{
+  background:var(--slate);border:1px solid var(--border);
+  border-radius:var(--radius2);padding:26px 28px;
+  cursor:pointer;transition:all .25s;
+}
+.job-card:hover{border-color:var(--gold-border);transform:translateY(-2px);box-shadow:0 7px 28px rgba(0,0,0,.3)}
+.jt{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:2px}
+.jco{font-size:11.5px;color:var(--light)}
+.jbadge{display:inline-block;padding:4px 11px;border-radius:20px;font-size:10.5px;font-weight:600;letter-spacing:.04em}
+.b-full{background:rgba(107,207,255,.1);color:#6bcfff}
+.b-remote{background:rgba(80,200,120,.1);color:#50c878}
+.b-contract{background:rgba(255,170,80,.1);color:#ffaa50}
+.jdesc{font-size:12.5px;color:var(--muted);line-height:1.75;margin-top:10px}
+.jtags{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.jtag{padding:3px 9px;border-radius:4px;background:rgba(255,255,255,.06);color:var(--muted);font-size:10.5px;font-weight:500}
+.jfoot{display:flex;justify-content:space-between;align-items:center;margin-top:15px;padding-top:15px;border-top:1px solid var(--border)}
+.jloc{font-size:11.5px;color:var(--light)}
+.japply{background:var(--gold);color:var(--ink);padding:8px 17px;border-radius:7px;border:none;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;cursor:pointer;transition:all .2s}
+.japply:hover{background:var(--gold2)}
+.sidebar{display:flex;flex-direction:column;gap:16px}
+.sb{background:var(--slate);border:1px solid var(--border);border-radius:var(--radius2);padding:22px}
+.sb.gold{background:var(--gold);border-color:transparent}
+.sb h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:9px}
+.sb.gold h3{color:var(--ink)}
+.sb p{font-size:12.5px;color:var(--muted);line-height:1.75;margin-bottom:14px}
+.sb.gold p{color:rgba(8,10,15,.6)}
+.sstat{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid var(--border)}
+.sstat-l{font-size:11.5px;color:var(--muted)}
+.sstat-v{font-size:13.5px;font-weight:700;color:var(--white)}
+
+/* ═══ JOB DETAIL PAGE ═══ */
+.job-detail-page{display:none;padding:68px 0 0}
+.job-detail-page.active{display:block}
+.jd-back{
+  display:flex;align-items:center;gap:8px;
+  background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;
+  font-size:13px;cursor:pointer;padding:20px 60px;transition:color .2s;
+}
+.jd-back:hover{color:var(--gold)}
+.jd-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.jd-hero{background:var(--slate);padding:48px 60px;border-bottom:1px solid var(--border)}
+.jd-badges{display:flex;gap:8px;margin-bottom:16px}
+.jd-title{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;letter-spacing:-.04em;color:var(--white);line-height:1.1;margin-bottom:12px}
+.jd-meta{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.jd-meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.jd-meta-item svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.jd-apply-btn{background:var(--gold);color:var(--ink);padding:13px 28px;border-radius:8px;border:none;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.jd-apply-btn:hover{background:var(--gold2);transform:translateY(-1px)}
+.jd-body{padding:48px 60px;display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start}
+.jd-content h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--white);margin:32px 0 14px;letter-spacing:-.02em}
+.jd-content h2:first-child{margin-top:0}
+.jd-content p{font-size:13.5px;color:var(--muted);line-height:1.9;margin-bottom:14px}
+.jd-content ul{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.jd-content ul li{font-size:13px;color:var(--muted);line-height:1.7;padding-left:18px;position:relative}
+.jd-content ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:11px}
+.jd-sidebar-box{background:var(--slate);border:1px solid var(--border);border-radius:var(--radius2);padding:24px;margin-bottom:16px}
+.jd-sidebar-box h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:14px}
+.jd-fact{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid var(--border)}
+.jd-fact:first-of-type{padding-top:0;border-top:none}
+.jd-fact-l{font-size:11.5px;color:var(--muted)}
+.jd-fact-v{font-size:12.5px;font-weight:600;color:var(--white)}
+.interview-step{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-top:1px solid var(--border)}
+.is-num{width:28px;height:28px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;color:var(--ink);flex-shrink:0}
+.is-txt{font-size:12.5px;color:var(--muted);line-height:1.6}
+.is-txt strong{color:var(--white);font-weight:600;display:block;margin-bottom:2px}
+
+/* ═══ TRAINING ═══ */
+.training-hero{background:var(--slate);padding:84px 60px 68px;position:relative;overflow:hidden}
+.training-hero::after{
+  content:'';position:absolute;top:-140px;right:-140px;
+  width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,164,90,.08) 0%,transparent 65%);pointer-events:none;
+}
+.t-stats{display:flex;gap:22px;margin-top:30px}
+.ts{display:flex;flex-direction:column}
+.ts-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--gold);letter-spacing:-.03em}
+.ts-l{font-size:10.5px;color:var(--muted);letter-spacing:.04em}
+.ts-div{width:1px;background:var(--border);margin:4px 0}
+.training-content{padding:60px;display:flex;flex-direction:column;gap:76px}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.tc.rev{direction:rtl}
+.tc.rev>*{direction:ltr}
+.tc-label{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:11px;font-weight:500}
+.tc-h{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1.09;color:var(--white);margin-bottom:14px}
+.tc-price{
+  display:inline-flex;align-items:baseline;gap:6px;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:7px;padding:7px 14px;margin-bottom:16px;
+}
+.tc-pn{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--gold);letter-spacing:-.02em}
+.tc-ps{font-size:11.5px;color:var(--muted)}
+.tc-body{font-size:12.5px;color:var(--muted);line-height:1.9;margin-bottom:22px}
+.star-method{display:flex;flex-direction:column;gap:11px;margin-bottom:26px}
+.star-item{display:flex;align-items:flex-start;gap:11px}
+.star-l{width:26px;height:26px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:11.5px;font-weight:800;color:var(--ink);flex-shrink:0}
+.star-c{font-size:12.5px;color:var(--muted);line-height:1.65}
+.star-c strong{color:var(--white);font-weight:600}
+.tc-enroll{
+  background:var(--gold);color:var(--ink);
+  padding:13px 26px;border-radius:9px;border:none;
+  font-family:'Syne',sans-serif;font-size:13.5px;font-weight:700;
+  cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px;
+}
+.tc-enroll:hover{background:var(--gold2);transform:translateY(-1px)}
+.tc-enroll svg{width:15px;height:15px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modules{background:var(--slate);border:1px solid var(--border);border-radius:var(--radius2);padding:26px;display:flex;flex-direction:column}
+.mod{display:flex;align-items:flex-start;gap:13px;padding:13px 0;border-bottom:1px solid var(--border)}
+.mod:last-child{border-bottom:none}
+.mod-w{font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:.08em;min-width:54px;margin-top:2px}
+.mod-h{font-size:13.5px;font-weight:600;color:var(--white);margin-bottom:4px}
+.mod-p{font-size:11.5px;color:var(--muted);line-height:1.65}
+
+/* ═══ EBOOK SECTION ═══ */
+.ebook-sec{
+  background:var(--ink2);padding:76px 60px;
+  border-top:1px solid var(--border);
+}
+.ebook-sec .sec-h{color:var(--white)}
+.ebook-intro{font-size:14px;color:var(--muted);max-width:520px;line-height:1.85;margin-bottom:48px}
+.ebook-cta-wrap{
+  background:var(--slate);border:1px solid var(--gold-border);
+  border-radius:var(--radius2);padding:44px;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+}
+.ebook-cta-left h3{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--white);letter-spacing:-.03em;margin-bottom:10px}
+.ebook-cta-left p{font-size:13px;color:var(--muted);line-height:1.8;max-width:440px}
+.ebook-features{display:flex;gap:18px;margin-top:20px;flex-wrap:wrap}
+.ef{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
+.ef svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ebook-cta-right{display:flex;flex-direction:column;gap:12px;align-items:center;min-width:200px}
+.ebook-preview{
+  width:160px;height:100px;background:var(--gold);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--ink);
+  box-shadow:0 16px 40px rgba(200,164,90,.3);
+}
+.ebook-link{
+  display:block;background:var(--gold);color:var(--ink);
+  padding:13px 28px;border-radius:9px;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;text-decoration:none;text-align:center;transition:all .2s;width:100%;
+}
+.ebook-link:hover{background:var(--gold2);transform:translateY(-1px)}
+.ebook-note{font-size:11px;color:var(--muted);text-align:center}
+
+/* ═══ CALENDAR MODAL ═══ */
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.85);backdrop-filter:blur(10px);
+  z-index:2000;align-items:center;justify-content:center;padding:18px;
+}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:var(--slate2);border:1px solid var(--border);
+  border-radius:20px;padding:42px 38px;
+  width:100%;max-width:540px;max-height:92vh;overflow-y:auto;
+  position:relative;animation:fadeUp .25s ease;
+}
+.modal-x{
+  position:absolute;top:16px;right:16px;
+  background:var(--border);border:none;width:30px;height:30px;
+  border-radius:7px;cursor:pointer;color:var(--muted);
+  font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;
+}
+.modal-x:hover{background:var(--gold);color:var(--ink)}
+.modal-h{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;margin-bottom:4px}
+.modal-sh{font-size:12.5px;color:var(--muted);margin-bottom:26px}
+
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.fg.half{display:inline-flex;flex-direction:column;gap:5px;width:48%}
+.frow{display:flex;gap:14px}
+.fl{font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gold)}
+.fi{
+  background:var(--ink2);border:1px solid var(--border);
+  border-radius:8px;padding:11px 13px;
+  font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--white);
+  outline:none;transition:border-color .2s;width:100%;
+}
+.fi:focus{border-color:var(--gold)}
+select.fi option{background:var(--slate2);color:var(--white)}
+.fsubmit{
+  width:100%;margin-top:18px;background:var(--gold);color:var(--ink);
+  padding:13px;border-radius:9px;border:none;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .2s;
+}
+.fsubmit:hover{background:var(--gold2)}
+
+/* Calendar */
+.cal-wrap{margin:18px 0}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-month{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white)}
+.cal-nav{background:none;border:1px solid var(--border);border-radius:6px;width:30px;height:30px;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cal-nav:hover{border-color:var(--gold);color:var(--gold)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-day-label{font-size:10.5px;color:var(--muted);text-align:center;padding:4px 0;letter-spacing:.05em}
+.cal-day{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  border-radius:7px;font-size:12.5px;cursor:default;color:var(--dim);border:1px solid transparent;
+  transition:all .2s;
+}
+.cal-day.monday{color:var(--white);cursor:pointer;background:var(--gold-dim);border-color:var(--gold-border)}
+.cal-day.monday:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.cal-day.selected{background:var(--gold)!important;color:var(--ink)!important;font-weight:700;border-color:var(--gold)!important}
+.cal-day.past{opacity:.3;cursor:not-allowed}
+.cal-info{background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:var(--gold);line-height:1.65}
+
+/* Confirmation */
+.confirm-box{background:var(--ink2);border:1px solid var(--gold-border);border-radius:12px;padding:24px;margin-top:18px;display:none}
+.confirm-box h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:12px}
+.confirm-detail{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.confirm-detail span{color:var(--gold);font-weight:600}
+.pay-btn{
+  display:block;width:100%;margin-top:18px;
+  background:var(--gold);color:var(--ink);
+  padding:13px;border-radius:9px;border:none;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;text-align:center;text-decoration:none;transition:all .2s;
+}
+.pay-btn:hover{background:var(--gold2)}
+
+/* Apply Modal */
+.apply-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.85);backdrop-filter:blur(10px);
+  z-index:3000;align-items:center;justify-content:center;padding:18px;
+}
+.apply-overlay.open{display:flex}
+
+/* Invoice Modal */
+.inv-modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.85);backdrop-filter:blur(10px);
+  z-index:2500;align-items:center;justify-content:center;padding:18px;
+}
+.inv-modal.open{display:flex}
+.rate-disp{background:var(--ink2);border:1px solid var(--gold-border);border-radius:8px;padding:11px 13px;font-size:13.5px;color:var(--gold);font-weight:600}
+.total-bar{background:var(--gold);border-radius:9px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:18px;display:none}
+.total-label{font-size:12.5px;font-weight:600;color:var(--ink);letter-spacing:.04em}
+.total-amt{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.info-note{background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:7px;padding:12px 14px;margin-top:14px;font-size:11.5px;color:var(--gold);line-height:1.65}
+.pay-link{
+  display:block;width:100%;margin-top:12px;background:var(--gold);color:var(--ink);
+  padding:13px;border-radius:9px;border:none;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;text-align:center;text-decoration:none;transition:all .2s;display:none;
+}
+.pay-link:hover{background:var(--gold2)}
+.type-sel{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.type-btn{
+  background:var(--ink2);border:2px solid var(--border);
+  border-radius:9px;padding:16px;cursor:pointer;
+  transition:all .2s;font-family:'DM Sans',sans-serif;
+  font-size:13.5px;font-weight:500;color:var(--muted);text-align:center;
+}
+.type-btn:hover{border-color:var(--gold);color:var(--white)}
+.type-btn.sel{border-color:var(--gold);background:var(--gold-dim);color:var(--gold)}
+.type-ico{font-size:20px;margin-bottom:7px}
+
+/* ═══ FOOTER ═══ */
+footer{
+  background:var(--ink);padding:60px 60px 28px;
+  border-top:1px solid var(--border);
+}
+.ft-grid{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;
+  margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--border);
+}
+.ft-brand p{font-size:12.5px;color:var(--muted);line-height:1.85;max-width:230px;margin-top:14px}
+.ft-col h4{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
+.ft-col a{display:block;font-size:12.5px;color:var(--muted);text-decoration:none;margin-bottom:9px;cursor:pointer;transition:color .2s}
+.ft-col a:hover{color:var(--gold)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:11.5px;color:var(--dim)}
+
+@media(max-width:900px){
+  header{padding:0 18px}
+  .hero{grid-template-columns:1fr}
+  .hero-left,.hero-right{padding:52px 20px}
+  .hero-h1{font-size:42px}
+  .awards-band,.about-wrap,.svcs-grid{grid-template-columns:1fr;padding:36px 20px}
+  .awards-cards{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .career-layout,.training-content,.invoice-sec{padding:36px 20px}
+  .tc,.tc.rev{grid-template-columns:1fr;direction:ltr}
+  .invoice-opts{flex-direction:column}
+  .ebook-cta-wrap{grid-template-columns:1fr}
+  .jd-back,.jd-hero,.jd-body{padding-left:20px;padding-right:20px}
+  .jd-body{grid-template-columns:1fr}
+  .job-detail-page,.job-detail-page.active{padding-top:68px}
+  footer{padding:44px 20px 20px}
+  .ft-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-  <div class="logo">Soyeb IT <span>Services</span></div>
+  <div class="logo" onclick="showPage('home')">
+    <div class="logo-gem">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
+    </div>
+    <div class="logo-text">
+      Soyeb IT Services
+      <span>Global Recruitment & Staffing</span>
+    </div>
+  </div>
   <nav>
-    <button id="nav-home" class="active" onclick="showPage('home')">Home</button>
-    <button id="nav-services" onclick="showPage('services')">Services</button>
-    <button id="nav-career" onclick="showPage('career')">Career</button>
-    <button class="nav-cta" onclick="openModal('General Inquiry')">Get Started</button>
+    <button id="nav-home" class="nav-btn active" onclick="showPage('home')">Home</button>
+    <button id="nav-services" class="nav-btn" onclick="showPage('services')">Services</button>
+    <button id="nav-training" class="nav-btn" onclick="showPage('training')">Training</button>
+    <button id="nav-career" class="nav-btn" onclick="showPage('career')">Careers</button>
+    <button class="nav-btn nav-cta" onclick="openApply('General Inquiry','')">Get Started</button>
   </nav>
 </header>
 
-<!-- ══════════ HOME PAGE ══════════ -->
-<section id="home" class="active">
-
-  <!-- HERO -->
+<!-- ════════════════ HOME ════════════════ -->
+<div class="page active" id="home">
   <div class="hero">
     <div class="hero-left">
-      <div class="chip"><span class="chip-dot"></span>Global IT Recruitment</div>
-      <h1 class="hero-h1">We hire the<br>world's best<br><em>IT talent.</em></h1>
-      <p class="hero-sub">End-to-end IT recruitment with full compliance, delivered at speed across 40+ countries. From contract staffing to senior leadership — we get it right.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="showPage('services')">Our Services</button>
-        <button class="btn-secondary" onclick="showPage('career')">Browse Jobs</button>
+      <div class="hero-ribbon">
+        <svg viewBox="0 0 24 24"><path d="M12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.37L12 6.1l1.71 4.04 4.38.37-3.32 2.88 1 4.28z"/></svg>
+        Best IT Recruitment Agency 2024 · Recruiter Awards
+      </div>
+      <div class="hero-label">Global IT Recruitment & Staffing</div>
+      <h1 class="hero-h1">
+        The world's<br>
+        <span class="gold">best IT talent</span><br>
+        <span class="outline">delivered fast.</span>
+      </h1>
+      <p class="hero-body">End-to-end IT recruitment with full legal, tax and visa compliance. Permanent hires, contract teams, and executive search across 40+ countries. We don't just fill roles — we build technology functions.</p>
+      <div class="hero-actions">
+        <button class="btn-gold" onclick="showPage('services')">Explore Services</button>
+        <button class="btn-ghost" onclick="showPage('career')">Browse Open Roles</button>
       </div>
       <div class="trust-row">
-        <div class="trust-avatars">
-          <div class="trust-avatar">JK</div>
-          <div class="trust-avatar">AS</div>
-          <div class="trust-avatar">MR</div>
-          <div class="trust-avatar">+</div>
-        </div>
-        <div class="trust-text">Trusted by <strong>200+ companies</strong><br>across the globe</div>
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>ISO 9001 Certified</div>
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>REC Member</div>
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/></svg>GDPR Compliant</div>
       </div>
     </div>
-
     <div class="hero-right">
-      <div class="stats-grid">
-        <div class="stat-box">
-          <div class="stat-num">500<span>+</span></div>
-          <div class="stat-label">Successful placements</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">40<span>+</span></div>
-          <div class="stat-label">Countries covered</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">98<span>%</span></div>
-          <div class="stat-label">Client satisfaction</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">5<span>yr</span></div>
-          <div class="stat-label">Industry experience</div>
-        </div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-n">500<span>+</span></div><div class="metric-l">Successful placements</div></div>
+        <div class="metric"><div class="metric-n">40<span>+</span></div><div class="metric-l">Countries covered</div></div>
+        <div class="metric"><div class="metric-n">98<span>%</span></div><div class="metric-l">Client satisfaction</div></div>
+        <div class="metric"><div class="metric-n">14<span>d</span></div><div class="metric-l">Avg. time-to-hire</div></div>
       </div>
-
-      <div class="services-list-title">What We Do</div>
+      <div class="exp-title">Core Expertise</div>
       <div onclick="showPage('services')">
-        <div class="svc-link">
-          <div>
-            <div class="svc-name">IT Recruitment</div>
-            <div class="svc-desc">Top talent, precision-matched to your team</div>
-          </div>
-          <div class="svc-arrow">→</div>
-        </div>
-        <div class="svc-link">
-          <div>
-            <div class="svc-name">Contract Staffing</div>
-            <div class="svc-desc">Flex teams for fast-scaling businesses</div>
-          </div>
-          <div class="svc-arrow">→</div>
-        </div>
-        <div class="svc-link">
-          <div>
-            <div class="svc-name">IT Consulting</div>
-            <div class="svc-desc">Strategy aligned to your business goals</div>
-          </div>
-          <div class="svc-arrow">→</div>
-        </div>
+        <div class="exp-item"><div><div class="exp-n">IT Recruitment</div><div class="exp-s">Permanent, contract & executive search</div></div><div class="exp-arr">→</div></div>
+        <div class="exp-item"><div><div class="exp-n">Contract Staffing</div><div class="exp-s">Rapid deployment within 14 days</div></div><div class="exp-arr">→</div></div>
+        <div class="exp-item"><div><div class="exp-n">RPO Solutions</div><div class="exp-s">Embedded recruiting for enterprise teams</div></div><div class="exp-arr">→</div></div>
+        <div class="exp-item"><div><div class="exp-n">IT Consulting</div><div class="exp-s">Workforce strategy & org design</div></div><div class="exp-arr">→</div></div>
       </div>
     </div>
   </div>
 
-  <!-- FEATURES STRIP -->
-  <div class="features-strip">
-    <div class="feature-wrap">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      </div>
-      <div class="feature-title">Global Reach, Local Expertise</div>
-      <div class="feature-text">We operate across 40+ countries with deep knowledge of local markets, regulations, and talent pools — giving you the best of both worlds.</div>
-    </div>
-    <div class="feature-wrap">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
-      <div class="feature-title">Compliance You Can Trust</div>
-      <div class="feature-text">Every placement is fully covered — employment law, visa requirements, tax compliance. We handle the complexity so you don't have to.</div>
-    </div>
-    <div class="feature-wrap">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-      </div>
-      <div class="feature-title">End-to-End Hiring Support</div>
-      <div class="feature-text">From job brief to first day — we manage sourcing, screening, interviewing, offer management, and onboarding coordination.</div>
+  <div class="marquee">
+    <div class="marquee-inner">
+      <div class="marquee-item">IT Recruitment<span class="mdot"></span></div>
+      <div class="marquee-item">Contract Staffing<span class="mdot"></span></div>
+      <div class="marquee-item">RPO Solutions<span class="mdot"></span></div>
+      <div class="marquee-item">Executive Search<span class="mdot"></span></div>
+      <div class="marquee-item">Compliance & Legal<span class="mdot"></span></div>
+      <div class="marquee-item">40+ Countries<span class="mdot"></span></div>
+      <div class="marquee-item">500+ Placements<span class="mdot"></span></div>
+      <div class="marquee-item">Data & AI Talent<span class="mdot"></span></div>
+      <div class="marquee-item">IT Recruitment<span class="mdot"></span></div>
+      <div class="marquee-item">Contract Staffing<span class="mdot"></span></div>
+      <div class="marquee-item">RPO Solutions<span class="mdot"></span></div>
+      <div class="marquee-item">Executive Search<span class="mdot"></span></div>
+      <div class="marquee-item">Compliance & Legal<span class="mdot"></span></div>
+      <div class="marquee-item">40+ Countries<span class="mdot"></span></div>
+      <div class="marquee-item">500+ Placements<span class="mdot"></span></div>
+      <div class="marquee-item">Data & AI Talent<span class="mdot"></span></div>
     </div>
   </div>
 
-  <!-- ABOUT STRIP -->
-  <div class="about-strip">
+  <div class="awards-band">
     <div>
-      <div class="about-label">About Soyeb IT Services</div>
-      <h2 class="about-h2">Built for businesses<br>that can't afford to<br><em>get hiring wrong.</em></h2>
-      <p class="about-p">Soyeb IT Services was founded with one mission: make global IT recruitment simpler, faster, and more reliable. We combine deep technical knowledge with a global network of pre-vetted candidates — so you get the right hire, every time.</p>
-      <button class="btn-primary" style="font-size:13px;padding:11px 22px;" onclick="showPage('services')">Explore Our Services →</button>
+      <div class="sec-eye">Recognition & Credentials</div>
+      <h2 class="awards-h">Award-winning recruitment you can trust</h2>
+      <p class="awards-p">Our work has been independently recognised by the industry's leading bodies. Every certification reflects our commitment to quality, ethics, and compliance.</p>
     </div>
-    <div class="about-right">
-      <div class="about-card">
-        <div class="about-card-num">200+</div>
-        <div class="about-card-label">Active clients worldwide</div>
-        <div class="about-card-text">From startups to FTSE 100 enterprises</div>
-      </div>
-      <div class="about-card">
-        <div class="about-card-num" style="color:#2a5cff">14</div>
-        <div class="about-card-label">Days avg. time-to-hire</div>
-      </div>
-      <div class="about-card">
-        <div class="about-card-num" style="color:#2a5cff">60%</div>
-        <div class="about-card-label">Faster than industry avg.</div>
-      </div>
+    <div class="awards-cards">
+      <div class="award-card"><div class="award-icon"><svg viewBox="0 0 24 24"><path d="M12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.37L12 6.1l1.71 4.04 4.38.37-3.32 2.88 1 4.28z"/></svg></div><div class="award-name">Best IT Recruiter</div><div class="award-year">Recruiter Awards 2024</div><div class="award-desc">Recognised for exceptional candidate placement quality and client satisfaction.</div></div>
+      <div class="award-card"><div class="award-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="award-name">ISO 9001:2015</div><div class="award-year">Quality Management</div><div class="award-desc">Certified quality management system across all recruitment operations.</div></div>
+      <div class="award-card"><div class="award-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="award-name">REC Corporate</div><div class="award-year">Member Since 2020</div><div class="award-desc">Full corporate member of the Recruitment & Employment Confederation.</div></div>
     </div>
   </div>
 
-</section>
+  <div class="about-wrap">
+    <div>
+      <div class="sec-eye">About Soyeb IT Services</div>
+      <h2 class="about-h">Built for businesses that can't afford to get hiring <em>wrong.</em></h2>
+      <p class="about-body">Soyeb IT Services was founded with one mission: make global IT recruitment simpler, faster, and more reliable. We combine deep technical knowledge with a global network of pre-vetted candidates — so you get the right hire, every time.</p>
+      <div class="about-pts">
+        <div class="about-pt"><div class="apt-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Deep sector expertise across cloud, data, AI, security and engineering</div>
+        <div class="about-pt"><div class="apt-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Full employment law, visa and tax compliance in every jurisdiction</div>
+        <div class="about-pt"><div class="apt-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Dedicated account managers who know your business and culture</div>
+        <div class="about-pt"><div class="apt-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Proprietary candidate assessment framework built for technical roles</div>
+      </div>
+      <button class="btn-gold" onclick="showPage('services')">Our Services →</button>
+    </div>
+    <div class="about-stats">
+      <div class="astat wide"><div class="astat-n">200+</div><div class="astat-l">Active clients worldwide</div><div class="astat-sub">From Series A startups to FTSE 100 enterprises</div></div>
+      <div class="astat"><div class="astat-n">14</div><div class="astat-l">Days avg. to hire</div></div>
+      <div class="astat"><div class="astat-n">60%</div><div class="astat-l">Faster than industry avg.</div></div>
+    </div>
+  </div>
+</div>
 
-<!-- ══════════ SERVICES PAGE ══════════ -->
-<section id="services">
-
-  <div class="page-header">
-    <div class="page-label">Our Services</div>
+<!-- ════════════════ SERVICES ════════════════ -->
+<div class="page" id="services">
+  <div class="page-hero">
+    <div class="sec-eye">Our Services</div>
     <h1 class="page-h1">Recruitment solutions<br>built for <em>tech businesses.</em></h1>
     <p class="page-sub">Whether you need one senior engineer or an entire contract team, we have the expertise and the network to deliver — fast, compliantly, and at scale.</p>
   </div>
 
-  <div class="services-grid">
-
-    <div class="svc-card">
-      <div class="svc-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <div class="svc-card-h">IT Recruitment</div>
-      <div class="svc-card-p">We identify, screen, and place the highest-calibre IT professionals across every discipline — from software engineers to C-suite technology leaders.</div>
-      <div class="svc-features">
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Permanent & executive search</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Technical skills assessment</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Culture fit evaluation</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Salary benchmarking</div>
-      </div>
-      <div class="svc-card-tag">Most Popular</div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-card-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <div class="svc-card-h">Contract Staffing</div>
-      <div class="svc-card-p">Scale your team rapidly with pre-vetted contractors ready to deliver from day one. Flexible engagements from weeks to multi-year programmes.</div>
-      <div class="svc-features">
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Rapid deployment (14 days avg.)</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Global contractor payroll</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>IR35 & tax compliance</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Seamless extension process</div>
-      </div>
-      <div class="svc-card-tag">Flexible Terms</div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-card-icon">
-        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <div class="svc-card-h">IT Consulting</div>
-      <div class="svc-card-p">Beyond recruitment — we advise on technology strategy, team structure, and talent planning to ensure your technology function delivers at its best.</div>
-      <div class="svc-features">
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Workforce planning</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Tech org design</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Market salary data</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Retained advisory packages</div>
-      </div>
-      <div class="svc-card-tag">Strategic</div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="svc-card-h">Compliance & Legal</div>
-      <div class="svc-card-p">We manage the full legal and regulatory complexity of cross-border hiring — so every placement is watertight, no matter the jurisdiction.</div>
-      <div class="svc-features">
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Visa & right-to-work checks</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Employment law guidance</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Contract drafting</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Multi-jurisdiction payroll</div>
-      </div>
-      <div class="svc-card-tag">40+ Countries</div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </div>
-      <div class="svc-card-h">Talent Pipeline</div>
-      <div class="svc-card-p">Build a sustainable hiring pipeline before you need it. We maintain curated talent pools so you can hire the moment a role opens up.</div>
-      <div class="svc-features">
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Pre-screened candidate pools</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Proactive market mapping</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Quarterly talent reviews</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Priority access to candidates</div>
-      </div>
-      <div class="svc-card-tag">Proactive</div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-card-icon">
-        <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-      </div>
-      <div class="svc-card-h">RPO Solutions</div>
-      <div class="svc-card-p">Recruitment Process Outsourcing — embed our team within yours for a seamless, scalable hiring function that grows with your business.</div>
-      <div class="svc-features">
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Dedicated embedded recruiter</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>ATS & process ownership</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Hiring analytics dashboard</div>
-        <div class="svc-feature"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Scalable cost model</div>
-      </div>
-      <div class="svc-card-tag">Enterprise</div>
-    </div>
-
+  <div class="svcs-grid">
+    <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div class="svc-h">IT Recruitment</div><div class="svc-p">We identify, screen, and place the highest-calibre IT professionals across every discipline — from engineers to C-suite technology leaders.</div><div class="svc-list"><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Permanent & executive search</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Technical skills assessment</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Culture fit evaluation</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Salary benchmarking</div></div><div class="svc-tag">Most Popular</div></div>
+    <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="svc-h">Contract Staffing</div><div class="svc-p">Scale your team rapidly with pre-vetted contractors ready to deliver from day one. Flexible engagements from weeks to multi-year programmes.</div><div class="svc-list"><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Rapid deployment (14 days avg.)</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Global contractor payroll</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>IR35 & tax compliance</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Seamless extension process</div></div><div class="svc-tag">Flexible Terms</div></div>
+    <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="svc-h">IT Consulting</div><div class="svc-p">Beyond recruitment — we advise on technology strategy, team structure, and talent planning to ensure your technology function delivers at its best.</div><div class="svc-list"><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Workforce planning</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Tech org design</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Market salary data</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Retained advisory packages</div></div><div class="svc-tag">Strategic</div></div>
+    <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="svc-h">Compliance & Legal</div><div class="svc-p">We manage the full legal and regulatory complexity of cross-border hiring — so every placement is watertight, no matter the jurisdiction.</div><div class="svc-list"><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Visa & right-to-work checks</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Employment law guidance</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Contract drafting</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Multi-jurisdiction payroll</div></div><div class="svc-tag">40+ Countries</div></div>
+    <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="svc-h">Talent Pipeline</div><div class="svc-p">Build a sustainable hiring pipeline before you need it. We maintain curated talent pools so you can hire the moment a role opens.</div><div class="svc-list"><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Pre-screened candidate pools</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Proactive market mapping</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Quarterly talent reviews</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Priority candidate access</div></div><div class="svc-tag">Proactive</div></div>
+    <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div><div class="svc-h">RPO Solutions</div><div class="svc-p">Embed our team within yours for a seamless, scalable hiring function that grows with your business and delivers consistent results.</div><div class="svc-list"><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Dedicated embedded recruiter</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>ATS & process ownership</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Hiring analytics dashboard</div><div class="svc-li"><div class="svc-check"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>Scalable cost model</div></div><div class="svc-tag">Enterprise</div></div>
   </div>
 
-  <!-- PROCESS -->
-  <div class="process-section">
-    <div class="section-label">How It Works</div>
-    <div class="section-h2">From brief to<br>hire in 4 steps.</div>
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-h">Discovery Call</div>
-        <div class="step-p">We learn your business, culture, tech stack, and exactly what you need from the role — and what success looks like.</div>
+  <!-- INVOICING -->
+  <div class="invoice-sec">
+    <div class="sec-eye">Billing & Payments</div>
+    <h2 class="invoice-h">Invoicing Portal</h2>
+    <p class="invoice-sub">Submit your contractor invoice or pay your client invoice quickly and securely through our self-service portal.</p>
+    <div class="invoice-opts">
+      <div class="inv-opt" onclick="openInvModal('candidate')">
+        <div class="ii-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="ih">I'm a Candidate</div>
+        <div class="ip">Submit your contractor or freelancer invoice. Calculate your earnings and download a professional invoice instantly.</div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-h">Talent Search</div>
-        <div class="step-p">We activate our network and run a targeted search — surfacing pre-vetted candidates who fit your criteria within days.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-h">Shortlist & Review</div>
-        <div class="step-p">You receive a curated shortlist with profiles, assessments, and our recommendation — no wasted interview time.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-h">Offer & Onboard</div>
-        <div class="step-p">We manage the offer process, compliance, and onboarding — and stay with you through the first 90 days.</div>
+      <div class="inv-opt" onclick="openInvModal('client')">
+        <div class="ii-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <div class="ih">I'm a Client</div>
+        <div class="ip">Pay your service invoice. Enter your billing period and service type to view your total and proceed to secure payment.</div>
       </div>
     </div>
   </div>
 
-</section>
+  <div class="process-sec">
+    <div class="sec-eye">How It Works</div>
+    <h2 class="sec-h">From brief to hire in 4 steps.</h2>
+    <div class="proc-grid">
+      <div class="proc"><div class="proc-n">01</div><div class="proc-h">Discovery Call</div><div class="proc-p">We learn your business, culture, tech stack, and exactly what you need from the role — and what success looks like.</div></div>
+      <div class="proc"><div class="proc-n">02</div><div class="proc-h">Talent Search</div><div class="proc-p">We activate our network and run a targeted search — surfacing pre-vetted candidates who fit your criteria within days.</div></div>
+      <div class="proc"><div class="proc-n">03</div><div class="proc-h">Shortlist & Review</div><div class="proc-p">You receive a curated shortlist with profiles, assessments, and our recommendation — no wasted interview time.</div></div>
+      <div class="proc"><div class="proc-n">04</div><div class="proc-h">Offer & Onboard</div><div class="proc-p">We manage the offer process, compliance, and onboarding — staying with you through the first 90 days.</div></div>
+    </div>
+  </div>
+</div>
 
-<!-- ══════════ CAREER PAGE ══════════ -->
-<section id="career">
+<!-- ════════════════ TRAINING ════════════════ -->
+<div class="page" id="training">
+  <div class="training-hero">
+    <div class="sec-eye">Professional Training</div>
+    <h1 class="page-h1">Accelerate your career with<br><em>expert-led training.</em></h1>
+    <p class="page-sub">One-to-one live video training programmes designed by industry professionals. Build in-demand skills in 4 weeks and transform your career trajectory.</p>
+    <div class="t-stats">
+      <div class="ts"><div class="ts-n">4</div><div class="ts-l">Programmes</div></div>
+      <div class="ts-div"></div>
+      <div class="ts"><div class="ts-n">1:1</div><div class="ts-l">Live Video Sessions</div></div>
+      <div class="ts-div"></div>
+      <div class="ts"><div class="ts-n">4wk</div><div class="ts-l">Intensive Format</div></div>
+      <div class="ts-div"></div>
+      <div class="ts"><div class="ts-n">94%</div><div class="ts-l">Job Placement Rate</div></div>
+    </div>
+  </div>
 
-  <div class="career-intro">
-    <div class="page-label">Open Positions</div>
+  <!-- EBOOK STORE SECTION -->
+  <div class="ebook-sec">
+    <div class="sec-eye">TSE eBook Store</div>
+    <h2 class="sec-h">Advance Further with<br><em>Expert eBooks</em></h2>
+    <p class="ebook-intro">Take your skills beyond the classroom. Our partner platform TSE — Technical Sourcing Excellence — offers 10+ expert-written eBooks covering everything from Boolean search mastery to global recruitment strategy.</p>
+    <div class="ebook-cta-wrap">
+      <div class="ebook-cta-left">
+        <h3>Technical Sourcing Excellence (TSE)</h3>
+        <p>The definitive knowledge platform for technical recruiters. From Boolean search mastery to DEI hiring strategies — practical, recruiter-written guides you can apply from day one.</p>
+        <div class="ebook-features">
+          <div class="ef"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>10+ expert eBooks</div>
+          <div class="ef"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Bundle packs at £110</div>
+          <div class="ef"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Individual titles from £59</div>
+          <div class="ef"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Instant digital download</div>
+        </div>
+      </div>
+      <div class="ebook-cta-right">
+        <div class="ebook-preview">TSE</div>
+        <a href="https://soyebimpulse-bit.github.io/TSE/" target="_blank" class="ebook-link">Visit eBook Store →</a>
+        <div class="ebook-note">Opens TSE platform in new tab</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="training-content">
+    <div class="tc">
+      <div>
+        <div class="tc-label">Programme 01 · Technical Recruitment</div>
+        <h2 class="tc-h">Technical Recruitment Masterclass</h2>
+        <div class="tc-price"><span class="tc-pn">£1,150</span><span class="tc-ps">· 4-week 1:1 programme · Video call</span></div>
+        <p class="tc-body">Master the art and science of IT recruitment in just 4 weeks. This intensive one-to-one programme takes you from the fundamentals of talent acquisition through to advanced sourcing strategies, candidate assessment, and client management.</p>
+        <div class="star-method">
+          <div class="star-item"><div class="star-l">S</div><div class="star-c"><strong>Situation:</strong> The UK tech sector faces a critical shortage of skilled recruiters who truly understand technology.</div></div>
+          <div class="star-item"><div class="star-l">T</div><div class="star-c"><strong>Task:</strong> You need a fast, practical route into technical recruitment with real mentorship.</div></div>
+          <div class="star-item"><div class="star-l">A</div><div class="star-c"><strong>Action:</strong> Our 1:1 video coaching sessions with an active senior recruiter give you live candidate briefs and role-plays.</div></div>
+          <div class="star-item"><div class="star-l">R</div><div class="star-c"><strong>Result:</strong> 94% of graduates land a recruitment role within 60 days of completing the programme.</div></div>
+        </div>
+        <button class="tc-enroll" onclick="openTrainingModal('Technical Recruitment Masterclass','£1,150')">Enrol Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="modules">
+        <div class="mod"><div class="mod-w">Week 1</div><div><div class="mod-h">Foundations of Tech Recruitment</div><div class="mod-p">Understanding the IT landscape, key roles (DevOps, SWE, Data, QA), and how to read a technical job spec without a CS degree.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 2</div><div><div class="mod-h">Advanced Sourcing & Boolean Search</div><div class="mod-p">LinkedIn Recruiter, GitHub, Stack Overflow — multi-channel sourcing strategies that find passive candidates your competitors can't reach.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 3</div><div><div class="mod-h">Candidate Assessment & Screening</div><div class="mod-p">Structured technical interviews, skills testing frameworks, culture-fit evaluation, and how to shortlist with confidence.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 4</div><div><div class="mod-h">Client Management & Billing</div><div class="mod-p">Building client relationships, managing expectations, offer negotiation, and running a sustainable full-desk billing practice.</div></div></div>
+      </div>
+    </div>
+
+    <div class="tc rev">
+      <div>
+        <div class="tc-label">Programme 02 · Data Analytics</div>
+        <h2 class="tc-h">Data Analyst Accelerator</h2>
+        <div class="tc-price"><span class="tc-pn">£2,150</span><span class="tc-ps">· 4-week 1:1 programme · Video call</span></div>
+        <p class="tc-body">Data analysts are among the most in-demand professionals in every industry. This one-to-one programme teaches you SQL, Python for data analysis, data visualisation with Tableau and Power BI, and statistical thinking.</p>
+        <div class="star-method">
+          <div class="star-item"><div class="star-l">S</div><div class="star-c"><strong>Situation:</strong> Companies generate more data than ever but can't find analysts who can turn raw data into business decisions.</div></div>
+          <div class="star-item"><div class="star-l">T</div><div class="star-c"><strong>Task:</strong> You want to break into data analysis but don't know where to start or what employers actually need.</div></div>
+          <div class="star-item"><div class="star-l">A</div><div class="star-c"><strong>Action:</strong> Live 1:1 coaching builds your SQL, Python, and BI tool skills through real datasets and business cases.</div></div>
+          <div class="star-item"><div class="star-l">R</div><div class="star-c"><strong>Result:</strong> Graduate with a portfolio of projects and the technical confidence to pass any data analyst interview.</div></div>
+        </div>
+        <button class="tc-enroll" onclick="openTrainingModal('Data Analyst Accelerator','£2,150')">Enrol Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="modules">
+        <div class="mod"><div class="mod-w">Week 1</div><div><div class="mod-h">SQL & Database Fundamentals</div><div class="mod-p">Querying relational databases, joins, aggregations, window functions, and extracting insights from large datasets.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 2</div><div><div class="mod-h">Python for Data Analysis</div><div class="mod-p">Pandas, NumPy, Matplotlib — the essential Python stack for cleaning, transforming, and visualising data at professional level.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 3</div><div><div class="mod-h">Tableau & Power BI Dashboards</div><div class="mod-p">Build executive-level dashboards that communicate insights clearly to non-technical stakeholders.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 4</div><div><div class="mod-h">Statistics, A/B Testing & Portfolio</div><div class="mod-p">Statistical significance, hypothesis testing, and building a portfolio project using real business data.</div></div></div>
+      </div>
+    </div>
+
+    <div class="tc">
+      <div>
+        <div class="tc-label">Programme 03 · Business Analysis</div>
+        <h2 class="tc-h">Business Analyst Bootcamp</h2>
+        <div class="tc-price"><span class="tc-pn">£1,950</span><span class="tc-ps">· 4-week 1:1 programme · Video call</span></div>
+        <p class="tc-body">Business Analysts bridge the gap between technology and business — one of the most valued and well-paid roles in any organisation. This programme teaches requirements gathering, process mapping, stakeholder management, and Agile methodologies.</p>
+        <div class="star-method">
+          <div class="star-item"><div class="star-l">S</div><div class="star-c"><strong>Situation:</strong> Digital transformation is accelerating — but organisations lack skilled BAs who can translate business needs into technical solutions.</div></div>
+          <div class="star-item"><div class="star-l">T</div><div class="star-c"><strong>Task:</strong> You need structured BA skills and a recognised methodology — fast — without a 12-month university course.</div></div>
+          <div class="star-item"><div class="star-l">A</div><div class="star-c"><strong>Action:</strong> 1:1 live video sessions walk through real-world case studies, user story writing, and stakeholder workshops.</div></div>
+          <div class="star-item"><div class="star-l">R</div><div class="star-c"><strong>Result:</strong> Leave with a professional BA portfolio, BCS-aligned knowledge, and confidence to work in Agile delivery teams.</div></div>
+        </div>
+        <button class="tc-enroll" onclick="openTrainingModal('Business Analyst Bootcamp','£1,950')">Enrol Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="modules">
+        <div class="mod"><div class="mod-w">Week 1</div><div><div class="mod-h">BA Fundamentals & Requirements</div><div class="mod-p">The BA role in projects, stakeholder identification, elicitation techniques, and writing clear business requirements.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 2</div><div><div class="mod-h">Process Mapping & Modelling</div><div class="mod-p">As-is vs to-be analysis, BPMN process flows, swimlane diagrams, and gap analysis — the tools every BA uses daily.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 3</div><div><div class="mod-h">Agile & User Stories</div><div class="mod-p">Agile ceremonies, Scrum roles, backlog management, writing user stories and acceptance criteria.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 4</div><div><div class="mod-h">Stakeholder Management & Delivery</div><div class="mod-p">Facilitation techniques, change management, UAT planning, and presenting your BA work to executive stakeholders.</div></div></div>
+      </div>
+    </div>
+
+    <div class="tc rev">
+      <div>
+        <div class="tc-label">Programme 04 · Project Management</div>
+        <h2 class="tc-h">Project Manager Accelerator</h2>
+        <div class="tc-price"><span class="tc-pn">£2,950</span><span class="tc-ps">· 4-week 1:1 programme · Video call</span></div>
+        <p class="tc-body">Project Managers command premium salaries in every sector. This elite one-to-one programme covers the full PM toolkit — from Prince2 principles to Agile delivery, risk management, budget control, and leading cross-functional teams.</p>
+        <div class="star-method">
+          <div class="star-item"><div class="star-l">S</div><div class="star-c"><strong>Situation:</strong> Projects fail not because of bad technology — but because of poor planning, unclear scope, and weak leadership.</div></div>
+          <div class="star-item"><div class="star-l">T</div><div class="star-c"><strong>Task:</strong> You're ready to step into a PM role but need structured training and real confidence.</div></div>
+          <div class="star-item"><div class="star-l">A</div><div class="star-c"><strong>Action:</strong> Our expert coaches work 1:1 through simulated projects, risk registers, board updates, and full project lifecycle management.</div></div>
+          <div class="star-item"><div class="star-l">R</div><div class="star-c"><strong>Result:</strong> Graduates secure PM roles at 40% higher salaries than their previous positions on average.</div></div>
+        </div>
+        <button class="tc-enroll" onclick="openTrainingModal('Project Manager Accelerator','£2,950')">Enrol Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="modules">
+        <div class="mod"><div class="mod-w">Week 1</div><div><div class="mod-h">Project Lifecycle & Initiation</div><div class="mod-p">Prince2 & PMBoK fundamentals, project charters, scope definition, stakeholder analysis, and building your first project plan.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 2</div><div><div class="mod-h">Planning, Risk & Budget</div><div class="mod-p">Work breakdown structures, Gantt charts, risk registers, dependency mapping, and controlling project budgets.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 3</div><div><div class="mod-h">Agile & Hybrid Delivery</div><div class="mod-p">Scrum, Kanban, SAFe essentials — managing teams across waterfall and agile environments.</div></div></div>
+        <div class="mod"><div class="mod-w">Week 4</div><div><div class="mod-h">Stakeholder Comms & Project Close</div><div class="mod-p">Executive reporting, escalation management, lessons learned, project closure, and building your PM profile.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════ CAREER ════════════════ -->
+<div class="page" id="career">
+  <div class="page-hero">
+    <div class="sec-eye">Open Positions</div>
     <h1 class="page-h1">Find your next<br><em>great role.</em></h1>
-    <p class="page-sub">We place top IT professionals in world-class companies. Browse our current openings and apply in minutes.</p>
+    <p class="page-sub">We place top IT professionals in world-class companies across 40+ countries. Click any role to view the full job description and apply directly.</p>
   </div>
-
-  <div class="career-grid">
-
-    <div class="jobs-list">
-
-      <div class="job-card">
-        <div class="job-top">
-          <div>
-            <div class="job-title">Senior Frontend Engineer</div>
-            <div class="job-company">Fintech Scale-up · London, UK</div>
-          </div>
-          <span class="job-badge badge-full">Full-time</span>
-        </div>
-        <div style="font-size:13px;color:var(--text-on-light);line-height:1.7;">Building the next generation of financial tooling. You'll lead frontend architecture for a product used by 500k+ customers. React, TypeScript, and a team that ships fast.</div>
-        <div class="job-tags">
-          <span class="job-tag">React</span>
-          <span class="job-tag">TypeScript</span>
-          <span class="job-tag">GraphQL</span>
-          <span class="job-tag">£90–120k</span>
-        </div>
-        <div class="job-footer">
-          <span class="job-location">📍 London (Hybrid)</span>
-          <button class="apply-btn" onclick="openModal('Senior Frontend Engineer')">Apply Now</button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-top">
-          <div>
-            <div class="job-title">Backend Engineer (Python)</div>
-            <div class="job-company">SaaS Platform · Berlin, DE</div>
-          </div>
-          <span class="job-badge badge-remote">Remote</span>
-        </div>
-        <div style="font-size:13px;color:var(--text-on-light);line-height:1.7;">Join a fully-remote European SaaS team building developer tooling. You'll own critical backend services handling millions of daily API calls. Python, FastAPI, Postgres.</div>
-        <div class="job-tags">
-          <span class="job-tag">Python</span>
-          <span class="job-tag">FastAPI</span>
-          <span class="job-tag">PostgreSQL</span>
-          <span class="job-tag">€75–95k</span>
-        </div>
-        <div class="job-footer">
-          <span class="job-location">🌍 Fully Remote (EU)</span>
-          <button class="apply-btn" onclick="openModal('Backend Engineer')">Apply Now</button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-top">
-          <div>
-            <div class="job-title">AI / ML Engineer</div>
-            <div class="job-company">Enterprise Tech · New York, US</div>
-          </div>
-          <span class="job-badge badge-full">Full-time</span>
-        </div>
-        <div style="font-size:13px;color:var(--text-on-light);line-height:1.7;">Work on cutting-edge AI products being deployed across Fortune 500 companies. You'll design and deploy ML pipelines, LLM fine-tuning, and inference systems at scale.</div>
-        <div class="job-tags">
-          <span class="job-tag">Python</span>
-          <span class="job-tag">PyTorch</span>
-          <span class="job-tag">LLMs</span>
-          <span class="job-tag">$150–200k</span>
-        </div>
-        <div class="job-footer">
-          <span class="job-location">📍 New York (On-site)</span>
-          <button class="apply-btn" onclick="openModal('AI/ML Engineer')">Apply Now</button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-top">
-          <div>
-            <div class="job-title">DevOps / Platform Engineer</div>
-            <div class="job-company">HealthTech Startup · Amsterdam, NL</div>
-          </div>
-          <span class="job-badge badge-contract">Contract</span>
-        </div>
-        <div style="font-size:13px;color:var(--text-on-light);line-height:1.7;">6-month contract to build out cloud infrastructure for a rapidly scaling HealthTech company. Kubernetes, AWS, Terraform — with real ownership from day one.</div>
-        <div class="job-tags">
-          <span class="job-tag">Kubernetes</span>
-          <span class="job-tag">AWS</span>
-          <span class="job-tag">Terraform</span>
-          <span class="job-tag">€600–750/day</span>
-        </div>
-        <div class="job-footer">
-          <span class="job-location">📍 Amsterdam (Hybrid)</span>
-          <button class="apply-btn" onclick="openModal('DevOps Engineer')">Apply Now</button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-top">
-          <div>
-            <div class="job-title">CTO / VP Engineering</div>
-            <div class="job-company">Series B Startup · Dubai, UAE</div>
-          </div>
-          <span class="job-badge badge-full">Full-time</span>
-        </div>
-        <div style="font-size:13px;color:var(--text-on-light);line-height:1.7;">Lead and scale the engineering function of a Series B company in the MENA region. Join the leadership team and shape the technical direction of a product used by millions.</div>
-        <div class="job-tags">
-          <span class="job-tag">Leadership</span>
-          <span class="job-tag">Strategy</span>
-          <span class="job-tag">Scaling</span>
-          <span class="job-tag">Executive</span>
-        </div>
-        <div class="job-footer">
-          <span class="job-location">📍 Dubai, UAE</span>
-          <button class="apply-btn" onclick="openModal('CTO / VP Engineering')">Apply Now</button>
-        </div>
-      </div>
-
+  <div class="career-layout">
+    <div class="jobs-list" id="jobs-list">
+      <!-- Jobs rendered by JS -->
     </div>
-
-    <!-- SIDEBAR -->
-    <div class="career-sidebar">
-
-      <div class="sidebar-card dark-card">
+    <div class="sidebar">
+      <div class="sb gold">
         <h3>Don't see your role?</h3>
-        <p>We place across all IT disciplines. Send us your CV and we'll match you to opportunities before they're even posted.</p>
-        <button class="btn-primary" style="font-size:13px;padding:10px 20px;width:100%;" onclick="openModal('Speculative Application')">Send Your CV</button>
+        <p>We place across all IT disciplines. Send us your CV and we'll match you to opportunities before they're posted.</p>
+        <button class="btn-gold" style="width:100%;font-size:12.5px;padding:10px 18px;" onclick="openApply('Speculative Application','')">Send Your CV</button>
       </div>
-
-      <div class="sidebar-card">
+      <div class="sb">
         <h3>Placement Stats</h3>
-        <div class="sidebar-stat">
-          <div class="sstat"><span class="sstat-label">Avg. time to offer</span><span class="sstat-val">14 days</span></div>
-          <div class="sstat"><span class="sstat-label">Offer acceptance rate</span><span class="sstat-val">94%</span></div>
-          <div class="sstat"><span class="sstat-label">Candidate satisfaction</span><span class="sstat-val">4.9 / 5</span></div>
-          <div class="sstat"><span class="sstat-label">Countries active</span><span class="sstat-val">40+</span></div>
-        </div>
+        <div class="sstat"><span class="sstat-l">Avg. time to offer</span><span class="sstat-v">14 days</span></div>
+        <div class="sstat"><span class="sstat-l">Offer acceptance rate</span><span class="sstat-v">94%</span></div>
+        <div class="sstat"><span class="sstat-l">Candidate satisfaction</span><span class="sstat-v">4.9 / 5</span></div>
+        <div class="sstat"><span class="sstat-l">Countries active</span><span class="sstat-v">40+</span></div>
       </div>
-
-      <div class="sidebar-card">
+      <div class="sb">
         <h3>Hiring for your team?</h3>
-        <p style="margin-bottom:12px;">Post a role and reach our network of 10,000+ pre-vetted IT professionals.</p>
-        <button class="btn-primary" style="font-size:13px;padding:10px 20px;width:100%;background:var(--navy);color:#fff;" onclick="showPage('services')">Get Hiring Help →</button>
+        <p>Post a role and reach our network of 10,000+ pre-vetted IT professionals.</p>
+        <button class="btn-gold" style="width:100%;font-size:12.5px;padding:10px 18px;background:var(--slate2);color:var(--white);border:1px solid var(--border);" onclick="showPage('services')">Get Hiring Help →</button>
       </div>
-
     </div>
   </div>
+</div>
 
-</section>
+<!-- ════════════════ JOB DETAIL ════════════════ -->
+<div class="job-detail-page" id="job-detail">
+  <button class="jd-back" onclick="backToCareer()">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to all roles
+  </button>
+  <div class="jd-hero" id="jd-hero-content"></div>
+  <div class="jd-body">
+    <div class="jd-content" id="jd-main-content"></div>
+    <div>
+      <div class="jd-sidebar-box" id="jd-sidebar-facts"></div>
+      <div class="jd-sidebar-box" id="jd-sidebar-process"></div>
+    </div>
+  </div>
+</div>
 
-<!-- ══════════ FOOTER ══════════ -->
+<!-- ════════════════ FOOTER ════════════════ -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Soyeb IT <span>Services</span></div>
-      <p>Global IT recruitment with compliance, speed, and quality. We connect the world's best tech talent with companies that need them most.</p>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="logo" onclick="showPage('home')">
+        <div class="logo-gem" style="width:32px;height:32px"><svg viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg></div>
+        <div class="logo-text">Soyeb IT Services<span>Global Recruitment & Staffing</span></div>
+      </div>
+      <p>Global IT recruitment with compliance, speed, and quality. Connecting world-class tech talent with companies that need them most.</p>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a onclick="showPage('services')">IT Recruitment</a>
-      <a onclick="showPage('services')">Contract Staffing</a>
-      <a onclick="showPage('services')">IT Consulting</a>
-      <a onclick="showPage('services')">RPO Solutions</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a onclick="showPage('home')">About Us</a>
-      <a onclick="showPage('career')">Careers</a>
-      <a>Blog</a>
-      <a>Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a>hello@soyebit.com</a>
-      <a>+44 20 0000 0000</a>
-      <a>London · Dubai · New York</a>
-    </div>
+    <div class="ft-col"><h4>Services</h4><a onclick="showPage('services')">IT Recruitment</a><a onclick="showPage('services')">Contract Staffing</a><a onclick="showPage('services')">IT Consulting</a><a onclick="showPage('services')">RPO Solutions</a></div>
+    <div class="ft-col"><h4>Company</h4><a onclick="showPage('home')">About Us</a><a onclick="showPage('training')">Training</a><a onclick="showPage('career')">Careers</a><a>Contact</a></div>
+    <div class="ft-col"><h4>Contact</h4><a>hello@soyebitservices.com</a><a>Kathy@soyebitservices.com</a><a>London · Dubai · New York</a></div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Soyeb IT Services. All rights reserved.</div>
-    <div class="footer-right">Privacy Policy · Terms of Service</div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 Soyeb IT Services. All rights reserved.</div>
+    <div class="ft-copy">Privacy Policy · Terms of Service</div>
   </div>
 </footer>
 
-<!-- ══════════ APPLY MODAL ══════════ -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div class="modal-header">
-      <div class="modal-title">Apply Now</div>
-      <div class="modal-sub" id="modal-role-label">Senior Frontend Engineer</div>
+<!-- ════════ INVOICE MODAL ════════ -->
+<div class="inv-modal" id="inv-modal" onclick="if(event.target===this)closeInv()">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeInv()">×</button>
+    <div id="inv-content"></div>
+  </div>
+</div>
+
+<!-- ════════ APPLY MODAL ════════ -->
+<div class="apply-overlay" id="apply-modal" onclick="if(event.target===this)closeApply()">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeApply()">×</button>
+    <h2 class="modal-h">Apply Now</h2>
+    <p class="modal-sh" id="apply-role-lbl">Role</p>
+    <div class="frow">
+      <div class="fg half"><label class="fl">First Name</label><input class="fi" id="ap-first" type="text" placeholder="John"></div>
+      <div class="fg half"><label class="fl">Last Name</label><input class="fi" id="ap-last" type="text" placeholder="Smith"></div>
     </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">First Name</label>
-        <input class="form-input" type="text" placeholder="John">
+    <div class="fg"><label class="fl">Email Address</label><input class="fi" id="ap-email" type="email" placeholder="john@email.com"></div>
+    <div class="fg"><label class="fl">Location</label><input class="fi" id="ap-loc" type="text" placeholder="London, UK"></div>
+    <div class="fg"><label class="fl">LinkedIn / Portfolio URL</label><input class="fi" id="ap-url" type="url" placeholder="https://linkedin.com/in/..."></div>
+    <div class="fg"><label class="fl">Cover Note</label><textarea class="fi" id="ap-note" rows="3" placeholder="Brief intro about yourself and why you're interested..."></textarea></div>
+    <button class="fsubmit" onclick="submitApply()">Submit Application →</button>
+  </div>
+</div>
+
+<!-- ════════ TRAINING ENROL MODAL ════════ -->
+<div class="modal-overlay" id="training-modal" onclick="if(event.target===this)closeTraining()">
+  <div class="modal-box" style="max-width:580px">
+    <button class="modal-x" onclick="closeTraining()">×</button>
+    <h2 class="modal-h" id="tm-title">Enrol</h2>
+    <p class="modal-sh" id="tm-price"></p>
+
+    <div id="tm-step1">
+      <div class="frow">
+        <div class="fg half"><label class="fl">First Name</label><input class="fi" id="tm-first" type="text" placeholder="Jane"></div>
+        <div class="fg half"><label class="fl">Last Name</label><input class="fi" id="tm-last" type="text" placeholder="Smith"></div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Last Name</label>
-        <input class="form-input" type="text" placeholder="Smith">
+      <div class="fg"><label class="fl">Email</label><input class="fi" id="tm-email" type="email" placeholder="jane@email.com"></div>
+      <div class="fg"><label class="fl">Phone</label><input class="fi" id="tm-phone" type="tel" placeholder="+44 7700 000000"></div>
+      <div class="fg"><label class="fl">Experience Level</label>
+        <select class="fi" id="tm-exp">
+          <option value="">Select your level...</option>
+          <option>Complete Beginner</option>
+          <option>1-2 Years Experience</option>
+          <option>3-5 Years Experience</option>
+          <option>5+ Years Experience</option>
+        </select>
+      </div>
+      <button class="fsubmit" onclick="showCalendar()">Choose Training Date →</button>
+    </div>
+
+    <div id="tm-step2" style="display:none">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:4px">Select your preferred start Monday:</p>
+      <div class="cal-wrap">
+        <div class="cal-header">
+          <button class="cal-nav" onclick="prevMonth()">‹</button>
+          <span class="cal-month" id="cal-month-lbl"></span>
+          <button class="cal-nav" onclick="nextMonth()">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+      <div class="cal-info">📅 Select any <strong>Monday</strong> from the current or upcoming months to begin your training. Sessions run weekly for 4 weeks.</div>
+      <div class="confirm-box" id="confirm-box">
+        <h3>✅ Booking Confirmed!</h3>
+        <div class="confirm-detail">Programme: <span id="conf-course"></span></div>
+        <div class="confirm-detail">Start Date: <span id="conf-date"></span></div>
+        <div class="confirm-detail">Name: <span id="conf-name"></span></div>
+        <div class="confirm-detail">Email: <span id="conf-email"></span></div>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.7">Complete your enrolment by paying below. Once payment is confirmed, you'll receive a calendar invite with your trainer's details.</p>
+        <a href="https://www.paypal.com/ncp/payment/KABUJWMAJLC3J" target="_blank" class="pay-btn">💳 Pay & Confirm Enrolment →</a>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group full">
-        <label class="form-label">Email Address</label>
-        <input class="form-input" type="email" placeholder="john.smith@email.com">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Phone Number</label>
-        <input class="form-input" type="tel" placeholder="+44 7700 000000">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Location</label>
-        <input class="form-input" type="text" placeholder="London, UK">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group full">
-        <label class="form-label">Upload CV</label>
-        <label class="file-upload">
-          <input type="file" accept=".pdf,.doc,.docx">
-          <div class="file-upload-text"><span>Click to upload</span> or drag and drop<br><span style="color:#aaa;font-size:11px;">PDF, DOC, DOCX up to 10MB</span></div>
-        </label>
-      </div>
-    </div>
-    <button class="modal-submit" onclick="submitApplication()">Submit Application →</button>
   </div>
 </div>
 
 <script>
-function showPage(page) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('nav button:not(.nav-cta)').forEach(b => b.classList.remove('active'));
-  document.getElementById(page).classList.add('active');
-  const nb = document.getElementById('nav-' + page);
+// ══════════════════════════════
+// JOB DATA
+// ══════════════════════════════
+const JOBS = [
+  {
+    id: 1,
+    title: 'Senior Backend Engineer — Stellar Ecosystem',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Remote (EMEA/EU Hours)',
+    salary: '€90K – €130K',
+    tags: ['Node.js','TypeScript','Blockchain','Remote'],
+    shortDesc: 'Lead backend systems for a multi-chain DeFi platform. Work with TypeScript, MongoDB, Redis, and the Stellar blockchain ecosystem.',
+    for: 'Candidate',
+    fullDesc: `<h2>About the Role</h2>
+<p>We are looking for multiple Senior Backend Engineers who will lead the design, development, and maintenance of backend systems, ensuring they are robust, scalable, and secure. You'll collaborate closely with cross-functional teams, including frontend developers, product managers, and designers, to deliver high-quality software solutions that drive our success.</p>
+<h2>The Tech Stack</h2>
+<ul>
+<li>Node.js running TypeScript code in Docker containers</li>
+<li>MongoDB and Redis for data storage and caching</li>
+<li>ethers.js for communication with the blockchains</li>
+<li>Github, Kubernetes, AWS and CloudFlare for GitOps CD chain</li>
+</ul>
+<h2>What You'll Do</h2>
+<ul>
+<li>Lead and actively participate in the design, development, and maintenance of backend systems and APIs</li>
+<li>Architect and implement scalable and robust backend solutions that can handle growing user loads</li>
+<li>Maintain high coding standards, conduct code reviews, and ensure best practices for code maintainability</li>
+<li>Identify bottlenecks and optimize code and algorithms to improve system performance</li>
+<li>Implement monitoring and debugging tools to proactively identify and resolve issues</li>
+<li>Develop and maintain comprehensive test suites including unit tests, integration tests, and end-to-end tests</li>
+<li>Provide guidance and mentorship to junior developers</li>
+<li>Document code, APIs, and technical processes to facilitate knowledge sharing</li>
+</ul>
+<h2>What Makes a Good Candidate</h2>
+<ul>
+<li>Must be located in the EMEA region</li>
+<li>Strong experience with TypeScript is required</li>
+<li>Experience working with the Stellar network in production environments</li>
+<li>Previous experience in the blockchain space, with technical understanding of the EVM ecosystem</li>
+<li>Extensive professional experience in a similar role (senior or lead level)</li>
+<li>Solid understanding of document databases and caching mechanisms</li>
+<li>Experience in software design and system architecture</li>
+<li>Strong knowledge of testing frameworks and best practices</li>
+<li>Excellent communication, collaboration, problem-solving, and analytical skills</li>
+<li>Experience with Stellar's Soroban smart contracts is a plus</li>
+</ul>
+<h2>What You'll Get</h2>
+<ul>
+<li>Annual team offsites (Marrakech in March 2025 was fantastic)</li>
+<li>30 days of PTO</li>
+<li>Flexible remote days and working hours</li>
+<li>Equity participation from day 1</li>
+<li>Entitlement to work computer (choice of equipment)</li>
+<li>Annual €1,000 personal development budget (after 6 months)</li>
+<li>One-time €1,000 remote setup budget</li>
+</ul>`,
+    process: ['Recruiter / HR Call','Hiring Manager Interview','Take Home Test','Technical Interview','Group Interview']
+  },
+  {
+    id: 2,
+    title: 'Senior Data Engineer',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Remote (Europe)',
+    salary: '$110K – $125K',
+    tags: ['Python','SQL','ClickHouse','Airflow','dbt'],
+    shortDesc: 'Build and scale data pipelines powering payments infrastructure and ecosystem analytics at one of Web3\'s most recognised companies.',
+    for: 'Candidate',
+    fullDesc: `<h2>About the Role</h2>
+<p>This is a Senior Data Engineer position on the Data Engineering team. You'll work closely with the Data Engineering Lead to design and scale the data platform powering payments infrastructure and ecosystem analytics.</p>
+<p>This role sits at the intersection of data engineering and backend systems. You'll build and operate event-driven data pipelines, maintain real-time processing systems, and ensure data quality across high-volume transactional workflows.</p>
+<h2>Requirements</h2>
+<h2>Data Platform & Pipeline Engineering</h2>
+<ul>
+<li>Design, build, and operate scalable data pipelines — event-driven, near real-time processing across high-volume transaction flows</li>
+<li>Maintain and evolve the real-time data platform, moving it from MVP pipeline to scalable production architecture</li>
+<li>Model and process transactional and ledger-style data — financial reconciliation, merchant reporting, wallet fee breakdowns</li>
+</ul>
+<h2>Data Quality & Observability</h2>
+<ul>
+<li>Ensure data accuracy, freshness, and observability across critical workflows</li>
+<li>Build monitoring and alerting that meets the reliability bar required for financial data systems</li>
+<li>Own data quality across the pipeline — from ingestion through transformation to downstream consumption</li>
+</ul>
+<h2>What You Bring</h2>
+<ul>
+<li>5+ years of experience in data engineering or data infrastructure</li>
+<li>Strong experience building data pipelines and production data platforms</li>
+<li>Comfortable using AI-assisted development tools with strong discipline in reviewing and validating generated code</li>
+<li>Expertise in SQL and large-scale data processing</li>
+<li>Experience with modern data stack tools: Airflow, dbt, ClickHouse, BigQuery, Snowflake or similar</li>
+<li>Experience working with event-driven architectures and real-time data processing</li>
+<li>Strong programming skills in Python or similar backend languages</li>
+</ul>
+<h2>Tech Stack</h2>
+<p>Python, SQL, ClickHouse, Airflow, dbt, Grafana, Preset/Deepnote. Event-driven architecture with near real-time processing.</p>
+<h2>Compensation & Benefits</h2>
+<ul>
+<li>Fully remote with home office budget</li>
+<li>Regular team offsites worldwide</li>
+<li>Opportunities to travel to conferences</li>
+<li>Generous PTO and parental leave</li>
+<li>Meaningful Learning & Development budget</li>
+<li>Competitive salary, equity, and potentially tokens</li>
+</ul>`,
+    process: ['Recruiter / HR Call','Hiring Manager Interview','Technical Interview (System Design + Practical)','Final Interview']
+  },
+  {
+    id: 3,
+    title: 'Security Engineer',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Austin, United States (Hybrid)',
+    salary: '$150K – $175K',
+    tags: ['AWS','Security','Cloud','SOC 2','Identity'],
+    shortDesc: 'Build the security program from the ground up at a company at the intersection of institutional finance and blockchain. Report directly to the CISO.',
+    for: 'Candidate',
+    fullDesc: `<h2>About the Role</h2>
+<p>Security is not a cost center here. It is a client-facing differentiator and a core part of how we earn trust with the institutional counterparties we serve. The security program you help build will be referenced in client due diligence packages, auditor engagements, and enterprise contract negotiations.</p>
+<p>You will report directly to the CISO, operate with technical autonomy, and have the organizational support to execute a security program that is genuinely production-grade.</p>
+<h2>What Will You Do?</h2>
+<h2>Security Infrastructure & Implementation</h2>
+<ul>
+<li>Design, deploy, and maintain core security controls across identity, endpoint, cloud, and application layers</li>
+<li>Own the technical integration of security tooling across the organization's environment</li>
+<li>Take responsibility for the technical execution of the organization's security roadmap</li>
+<li>SSO/MFA enforcement, MDM, EDR, CSPM, secrets management, and DLP</li>
+</ul>
+<h2>Monitoring, Detection & Incident Response</h2>
+<ul>
+<li>Build and maintain detection coverage across all cloud and endpoint systems</li>
+<li>Monitor security alerts and logs for anomalous activity; investigate potential incidents</li>
+<li>Deliver timely, structured updates to the CISO</li>
+</ul>
+<h2>Qualifications Required</h2>
+<ul>
+<li>3+ years of hands-on security engineering experience in a cloud-native environment</li>
+<li>Demonstrated experience implementing and administering identity and access management platforms</li>
+<li>Hands-on experience with AWS security services (IAM, CloudTrail, GuardDuty, Security Hub, Secrets Manager)</li>
+<li>Working knowledge of cloud security posture management tools (Wiz, Prisma Cloud, Prowler)</li>
+<li>Working knowledge of integrating SAST/SCA tooling into CI/CD pipelines</li>
+<li>Ability to produce audit-quality security documentation and evidence artifacts</li>
+</ul>
+<h2>Preferred</h2>
+<ul>
+<li>Experience supporting a SOC 2 audit end-to-end</li>
+<li>Familiarity with GRC platforms (Vanta, Drata, SecureFrame)</li>
+<li>Scripting experience for security automation</li>
+<li>Experience in a startup or high-growth environment where the security program was built, not inherited</li>
+</ul>`,
+    process: ['Hiring Manager Interview (CISO Call)','Behavioural Interview','Technical Interview','Final Interview']
+  },
+  {
+    id: 4,
+    title: 'Senior Site Reliability Engineer (Azure)',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Remote (US Only)',
+    salary: '$150K – $200K',
+    tags: ['Azure','Terraform','Kubernetes','Go','Python'],
+    shortDesc: 'Build and scale Azure infrastructure foundation for a production-grade distributed system. Design, own and deliver Terraform-based IaC from first principles.',
+    for: 'Candidate',
+    fullDesc: `<h2>Why This Role Exists</h2>
+<p>This role exists to ensure that our platform can operate as a secure, scalable, and production-ready system in Azure, supporting complex enterprise use cases and high reliability expectations.</p>
+<h2>The Impact You'll Have</h2>
+<ul>
+<li>Design and build secure, scalable Azure infrastructure from first principles for a production-grade distributed system</li>
+<li>Develop and own Terraform-based infrastructure as code, enabling repeatable and automated deployments</li>
+<li>Translate product and customer requirements into technical architecture and execution plans</li>
+<li>Build and enhance platform services, APIs, and integrations</li>
+<li>Partner across engineering, security, and product teams to deliver enterprise-ready infrastructure solutions</li>
+<li>Contribute to operational excellence, including reliability, observability, and incident response</li>
+</ul>
+<h2>What You Bring</h2>
+<h2>Core Capabilities</h2>
+<ul>
+<li>Proven experience designing and building production-grade systems on Azure</li>
+<li>Ability to take ambiguous requirements to structured technical solutions</li>
+<li>Strong technical communication skills across engineering and non-technical stakeholders</li>
+<li>High ownership mindset with a bias for action and accountability</li>
+</ul>
+<h2>Functional Expertise</h2>
+<ul>
+<li>Azure cloud services (networking, compute, identity, security, storage)</li>
+<li>Terraform (infrastructure as code at production scale)</li>
+<li>Programming experience in Go and/or Python</li>
+<li>Distributed systems, high-availability architectures, or platform engineering</li>
+<li>CI/CD and automation tooling for infrastructure lifecycle management</li>
+</ul>
+<h2>Compensation & Benefits</h2>
+<ul>
+<li>Equity & Tokens</li>
+<li>Performance Bonuses</li>
+<li>Health insurance & 401k (US employees)</li>
+</ul>`,
+    process: ['Recruiter / HR Call','Hiring Manager Interview','Technical Interview','Final Interview (VP of Engineering)']
+  },
+  {
+    id: 5,
+    title: 'Staff Backend Engineer — Agent Runtime',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Remote (US, EST timezone)',
+    salary: '$175K – $225K',
+    tags: ['TypeScript','Node.js','Golang','Event-Driven','Crypto'],
+    shortDesc: 'Own core systems inside an agent runtime — the infrastructure that prevents autonomous trading agents from destroying capital. High-ownership, high-trust engineering culture.',
+    for: 'Candidate',
+    fullDesc: `<h2>About the Role</h2>
+<p>You'll own core systems inside the Agent Runtime — the infrastructure that prevents autonomous agents from destroying capital. This is the critical path. Every line of code you ship makes the runtime more bulletproof for every agent that will ever run on it.</p>
+<h2>What You'll Be Building</h2>
+<ul>
+<li>Data pipeline — executing the enrichment roadmap: OI velocity, funding history, liquidation data, cross-asset flow detection</li>
+<li>Runtime execution layer — serial signal processing, atomic state management, idempotent order submission, risk enforcement</li>
+<li>DSL exit engine — the trailing stop-loss state machine that protects every open position</li>
+<li>Scanner subsystem — building new scanner types and wiring new signals into the confluence scoring system</li>
+<li>Learning agent infrastructure — systems that let agents observe every trade and identify failure patterns</li>
+<li>Scale — taking the runtime from hundreds of agents to tens of thousands</li>
+</ul>
+<h2>What You'll Bring</h2>
+<h2>Crypto-Native Experience (Essential)</h2>
+<ul>
+<li>Hands-on experience with crypto wallets, tokens, and trading systems</li>
+<li>Deep familiarity with trading APIs, execution flows, and transaction lifecycles</li>
+<li>Strong intuition for how real crypto markets behave under volatility and scale</li>
+</ul>
+<h2>Technical Skills</h2>
+<ul>
+<li>Strong production experience with TypeScript and Node.js</li>
+<li>Golang experience for infrastructure work</li>
+<li>Deep understanding of event-driven architectures and state machines</li>
+<li>Experience building systems where correctness matters more than speed</li>
+<li>Actively uses AI as an accelerant in design, development, and iteration (must have)</li>
+</ul>
+<h2>Compensation & Benefits</h2>
+<ul>
+<li>Equity: initial stock grant of ~1% of the company, currently valued at approximately $230,000</li>
+<li>Regular salary increases and bonuses based on revenue targets</li>
+<li>Token upside: pro-rata participation in token launch planned for 2026</li>
+</ul>`,
+    process: ['Hiring Manager Interview (CTO)','Technical Interview','Technical Interview','Founder / CEO Interview']
+  },
+  {
+    id: 6,
+    title: 'Staff AI Engineer',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Remote (EST timezone)',
+    salary: '$175K – $250K',
+    tags: ['ML','Reinforcement Learning','Python','LLMs','Production AI'],
+    shortDesc: 'Build the intelligence layer where an autonomous trading fleet learns from itself and gets smarter with every trade. Production ML, not research.',
+    for: 'Candidate',
+    fullDesc: `<h2>About the Role</h2>
+<p>Agents make real trades with real money 24/7, generating a continuous stream of decisions and outcomes. We're hiring a Staff AI Engineer to make the learning process autonomous: build the intelligence layer where the fleet learns from itself and gets smarter with every trade.</p>
+<p>This is a production role, not a research role. The feedback loop is immediate — your work either makes the agents more money or it doesn't. Every trade is a measurable outcome.</p>
+<h2>What You'll Own</h2>
+<h2>Learning & Optimization</h2>
+<ul>
+<li>Design and implement the feedback loop that connects trade outcomes back to strategy improvement</li>
+<li>Build the evaluation framework that quantifies which signals actually predict profitable trades</li>
+<li>Develop automated strategy generation and testing</li>
+<li>Detect shifts in market conditions and adapt fleet behavior accordingly</li>
+</ul>
+<h2>Autonomous Fleet Intelligence</h2>
+<ul>
+<li>Build higher-order agents that manage and improve the fleet without human intervention</li>
+<li>Automated fleet monitoring that catches configuration errors and degraded performance</li>
+<li>Performance attribution that decomposes every trade into its component drivers</li>
+<li>Fleet coordination that manages concentration risk and capital allocation</li>
+</ul>
+<h2>Must Have</h2>
+<ul>
+<li>ML engineering in production — trained, deployed, and maintained models that directly impact business outcomes</li>
+<li>Reinforcement learning or online learning experience</li>
+<li>Strong software engineering — Python primary, comfortable with Go or TypeScript</li>
+<li>You've closed the loop — built a system where predictions lead to actions that generate outcomes that improve the model</li>
+</ul>
+<h2>Compensation</h2>
+<ul>
+<li>Total starting all-in comp: ~$450k</li>
+<li>Base salary: $175,000–$250,000 USD</li>
+<li>Equity: ~1% initial stock grant, valued at $230,000</li>
+<li>Token upside: pro-rata participation in token launch (planned for 2026)</li>
+</ul>`,
+    process: ['Founder / CEO Interview (CEO + CTO)','Technical Interview (60 min deep dive)','Final Interview (possible paid trial project)']
+  },
+  {
+    id: 7,
+    title: 'Enterprise Account Executive',
+    type: 'full',
+    typeLabel: 'Full-time',
+    location: 'Remote (US Based)',
+    salary: '$100K – $150K',
+    tags: ['B2B Sales','Fintech','Payments','Enterprise','SaaS'],
+    shortDesc: 'Drive enterprise sales of cross-border payments and banking infrastructure solutions to global fintechs, PSPs, and financial institutions in the US.',
+    for: 'Client',
+    fullDesc: `<h2>About the Role</h2>
+<p>This is a senior, high-autonomy role for someone who has spent years building real expertise and real relationships in the US payments and fintech space and has the revenue track record to show for it. You'll own the full sales cycle from initial outreach through solution design, close, and implementation.</p>
+<h2>Key Responsibilities</h2>
+<ul>
+<li>Own the full sales cycle — lead deals from prospecting and qualification through commercial negotiation, close, and post-sale implementation planning</li>
+<li>Build and drive your own pipeline — leverage your existing network in the US fintech and payments ecosystem</li>
+<li>Lead technical discovery and solutioning — engage prospects at an architecture level across payment rails, integration models, and compliance frameworks</li>
+<li>Design tailored solutions — collaborate with internal solution architects, compliance, and product teams</li>
+<li>Lead commercial negotiations — structure pricing, contracts, and partnership terms</li>
+<li>Represent the company externally — participate in industry conferences and client meetings</li>
+</ul>
+<h2>Qualifications</h2>
+<ul>
+<li>5+ years in enterprise B2B sales in payments, fintech, or banking infrastructure — with a track record of hitting and exceeding quota</li>
+<li>Hunter mentality — proactive and driven by finding and winning new business</li>
+<li>Proven revenue impact — a clear history of building pipeline and closing significant deals</li>
+<li>A strong, active US network in the fintech, PSP, and payments infrastructure space</li>
+<li>Payments infrastructure expertise — knowledge of global payment rails (SWIFT, SEPA, ACH, FPS, RTP)</li>
+<li>Full-cycle sales ownership — you've run deals from first cold touch through close and post-sale</li>
+</ul>
+<h2>Why This Role</h2>
+<p>We're at an important inflection point in growth — strong momentum, an expanding global footprint, and a product that is genuinely differentiated in a market that is moving fast. Cross-border payments infrastructure is not a crowded space with an obvious winner yet.</p>`,
+    process: ['Recruiter / HR Call','Hiring Manager Interview','Technical / Competency Interview','Final Interview']
+  }
+];
+
+// ══════════════════════════════
+// NAVIGATION
+// ══════════════════════════════
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn:not(.nav-cta)').forEach(b => b.classList.remove('active'));
+  const jd = document.getElementById('job-detail');
+  if (jd) jd.classList.remove('active');
+  const pg = document.getElementById(id);
+  if (pg) pg.classList.add('active');
+  const nb = document.getElementById('nav-' + id);
   if (nb) nb.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function openModal(role) {
-  document.getElementById('modal-role-label').textContent = role || 'General Inquiry';
-  document.getElementById('modal-overlay').classList.add('open');
+// ══════════════════════════════
+// RENDER JOBS
+// ══════════════════════════════
+function renderJobs() {
+  const list = document.getElementById('jobs-list');
+  if (!list) return;
+  list.innerHTML = JOBS.map(j => `
+    <div class="job-card" onclick="openJob(${j.id})">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:9px">
+        <div>
+          <div class="jt">${j.title}</div>
+          <div class="jco">For: ${j.for} · ${j.location}</div>
+        </div>
+        <span class="jbadge b-${j.type}">${j.typeLabel}</span>
+      </div>
+      <div class="jdesc">${j.shortDesc}</div>
+      <div class="jtags">${j.tags.map(t => `<span class="jtag">${t}</span>`).join('')}<span class="jtag">${j.salary}</span></div>
+      <div class="jfoot">
+        <span class="jloc">📍 ${j.location}</span>
+        <button class="japply" onclick="event.stopPropagation();openApply('${j.title}','${j.id}')">Apply Now</button>
+      </div>
+    </div>
+  `).join('');
 }
 
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
+function openJob(id) {
+  const j = JOBS.find(x => x.id === id);
+  if (!j) return;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn:not(.nav-cta)').forEach(b => b.classList.remove('active'));
+  document.getElementById('nav-career').classList.add('active');
+  
+  const jd = document.getElementById('job-detail');
+  jd.classList.add('active');
+
+  document.getElementById('jd-hero-content').innerHTML = `
+    <div class="jd-badges">
+      <span class="jbadge b-${j.type}">${j.typeLabel}</span>
+      <span class="jbadge" style="background:var(--gold-dim);color:var(--gold)">For: ${j.for}</span>
+    </div>
+    <h1 class="jd-title">${j.title}</h1>
+    <div class="jd-meta">
+      <span class="jd-meta-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${j.location}</span>
+      <span class="jd-meta-item"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>${j.salary}</span>
+    </div>
+    <button class="jd-apply-btn" onclick="openApply('${j.title}','${j.id}')">Apply for This Role →</button>
+  `;
+
+  document.getElementById('jd-main-content').innerHTML = j.fullDesc;
+
+  document.getElementById('jd-sidebar-facts').innerHTML = `
+    <h4>Role Details</h4>
+    <div class="jd-fact"><span class="jd-fact-l">Type</span><span class="jd-fact-v">${j.typeLabel}</span></div>
+    <div class="jd-fact"><span class="jd-fact-l">Location</span><span class="jd-fact-v">${j.location}</span></div>
+    <div class="jd-fact"><span class="jd-fact-l">Salary</span><span class="jd-fact-v">${j.salary}</span></div>
+    <div class="jd-fact"><span class="jd-fact-l">Suited For</span><span class="jd-fact-v">${j.for}</span></div>
+    <div style="margin-top:14px"><button class="jd-apply-btn" style="width:100%" onclick="openApply('${j.title}','${j.id}')">Apply Now →</button></div>
+  `;
+
+  document.getElementById('jd-sidebar-process').innerHTML = `
+    <h4>Interview Process</h4>
+    ${j.process.map((step, i) => `
+      <div class="interview-step">
+        <div class="is-num">${i+1}</div>
+        <div class="is-txt"><strong>Stage ${i+1}</strong>${step}</div>
+      </div>
+    `).join('')}
+  `;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function closeModalOutside(e) {
-  if (e.target === document.getElementById('modal-overlay')) closeModal();
+function backToCareer() {
+  document.getElementById('job-detail').classList.remove('active');
+  showPage('career');
 }
 
-function submitApplication() {
-  alert('Thank you for applying! Our team will be in touch within 2 business days.');
-  closeModal();
+// ══════════════════════════════
+// APPLY MODAL
+// ══════════════════════════════
+let currentJobTitle = '';
+function openApply(role, jobId) {
+  currentJobTitle = role;
+  document.getElementById('apply-role-lbl').textContent = role;
+  document.getElementById('apply-modal').classList.add('open');
 }
+function closeApply() { document.getElementById('apply-modal').classList.remove('open'); }
+
+function submitApply() {
+  const first = document.getElementById('ap-first').value.trim();
+  const last = document.getElementById('ap-last').value.trim();
+  const email = document.getElementById('ap-email').value.trim();
+  const loc = document.getElementById('ap-loc').value.trim();
+  const url = document.getElementById('ap-url').value.trim();
+  const note = document.getElementById('ap-note').value.trim();
+  
+  if (!first || !email) { alert('Please fill in at least your name and email.'); return; }
+  
+  const subject = encodeURIComponent('Job Application: ' + currentJobTitle);
+  const body = encodeURIComponent(
+    'Application for: ' + currentJobTitle + '\n\n' +
+    'Name: ' + first + ' ' + last + '\n' +
+    'Email: ' + email + '\n' +
+    'Location: ' + loc + '\n' +
+    'LinkedIn/Portfolio: ' + url + '\n\n' +
+    'Cover Note:\n' + note
+  );
+  
+  window.location.href = 'mailto:soyeb.impulse@gmail.com?subject=' + subject + '&body=' + body;
+  closeApply();
+  setTimeout(() => alert('Your email client has opened. Please send the email to complete your application. Our team will be in touch within 2 business days.'), 500);
+}
+
+// ══════════════════════════════
+// TRAINING CALENDAR
+// ══════════════════════════════
+let calYear, calMonth, selectedDate = null, currentCourse = '', currentPrice = '';
+
+function openTrainingModal(course, price) {
+  currentCourse = course;
+  currentPrice = price;
+  document.getElementById('tm-title').textContent = 'Enrol: ' + course;
+  document.getElementById('tm-price').textContent = price + ' · 4-week 1:1 programme';
+  document.getElementById('tm-step1').style.display = 'block';
+  document.getElementById('tm-step2').style.display = 'none';
+  document.getElementById('confirm-box').style.display = 'none';
+  selectedDate = null;
+  document.getElementById('training-modal').classList.add('open');
+}
+function closeTraining() { document.getElementById('training-modal').classList.remove('open'); }
+
+function showCalendar() {
+  const first = document.getElementById('tm-first').value.trim();
+  const email = document.getElementById('tm-email').value.trim();
+  if (!first || !email) { alert('Please enter your name and email first.'); return; }
+  document.getElementById('tm-step1').style.display = 'none';
+  document.getElementById('tm-step2').style.display = 'block';
+  const now = new Date();
+  calYear = now.getFullYear();
+  calMonth = now.getMonth();
+  renderCal();
+}
+
+function renderCal() {
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-lbl').textContent = months[calMonth] + ' ' + calYear;
+  const grid = document.getElementById('cal-grid');
+  const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  let html = days.map(d => `<div class="cal-day-label">${d}</div>`).join('');
+  
+  const first = new Date(calYear, calMonth, 1);
+  const last = new Date(calYear, calMonth + 1, 0);
+  const today = new Date(); today.setHours(0,0,0,0);
+  
+  for (let i = 0; i < first.getDay(); i++) html += '<div class="cal-day"></div>';
+  
+  for (let d = 1; d <= last.getDate(); d++) {
+    const date = new Date(calYear, calMonth, d);
+    const isMonday = date.getDay() === 1;
+    const isPast = date < today;
+    const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+    let cls = 'cal-day';
+    if (isMonday && !isPast) cls += ' monday';
+    if (isPast) cls += ' past';
+    if (isSelected) cls += ' selected';
+    const onclick = isMonday && !isPast ? `selectDate(${calYear},${calMonth},${d})` : '';
+    html += `<div class="${cls}" ${onclick ? `onclick="${onclick}"` : ''}>${d}</div>`;
+  }
+  grid.innerHTML = html;
+}
+
+function prevMonth() {
+  calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } renderCal();
+}
+function nextMonth() {
+  calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } renderCal();
+}
+
+function selectDate(y, m, d) {
+  selectedDate = new Date(y, m, d);
+  renderCal();
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dateStr = 'Monday ' + d + ' ' + months[m] + ' ' + y;
+  document.getElementById('conf-course').textContent = currentCourse;
+  document.getElementById('conf-date').textContent = dateStr;
+  document.getElementById('conf-name').textContent = (document.getElementById('tm-first').value + ' ' + document.getElementById('tm-last').value).trim();
+  document.getElementById('conf-email').textContent = document.getElementById('tm-email').value;
+  document.getElementById('confirm-box').style.display = 'block';
+  document.getElementById('confirm-box').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ══════════════════════════════
+// INVOICE
+// ══════════════════════════════
+let invType = 'candidate', selType = 'contractor';
+
+function openInvModal(t) {
+  invType = t;
+  const c = document.getElementById('inv-content');
+  c.innerHTML = t === 'candidate' ? candHTML() : clientHTML();
+  document.getElementById('inv-modal').classList.add('open');
+}
+function closeInv() { document.getElementById('inv-modal').classList.remove('open'); }
+
+function candHTML() {
+  return `
+    <h2 class="modal-h">Candidate Invoice Portal</h2>
+    <p class="modal-sh">Generate and download your professional invoice</p>
+    <div class="type-sel">
+      <div class="type-btn sel" id="tb-contractor" onclick="selInvType('contractor')"><div class="type-ico">🏗️</div>Contractor</div>
+      <div class="type-btn" id="tb-freelancer" onclick="selInvType('freelancer')"><div class="type-ico">💻</div>Freelancer</div>
+    </div>
+    <div class="fg"><label class="fl">Full Name</label><input class="fi" id="c-name" type="text" placeholder="Your full legal name"></div>
+    <div class="frow">
+      <div class="fg half"><label class="fl">From Date</label><input class="fi" id="c-from" type="date" oninput="calcCand()"></div>
+      <div class="fg half"><label class="fl">To Date</label><input class="fi" id="c-to" type="date" oninput="calcCand()"></div>
+    </div>
+    <div class="total-bar" id="c-total-bar">
+      <div><div class="total-label">INVOICE TOTAL</div><div style="font-size:11px;color:rgba(8,10,15,.5);margin-top:1px" id="c-days-lbl"></div></div>
+      <div class="total-amt" id="c-total">£0.00</div>
+    </div>
+    <div class="info-note">📧 Email your invoice + approved timesheet to <strong>Kathy@soyebitservices.com</strong><br>💳 Payment processed within <strong>7 working days</strong> of receiving both documents.</div>
+    <button class="fsubmit" id="c-dl" onclick="downloadInv()" style="display:none">⬇ Download Invoice</button>
+  `;
+}
+
+function selInvType(t) {
+  selType = t;
+  document.getElementById('tb-contractor').classList.toggle('sel', t === 'contractor');
+  document.getElementById('tb-freelancer').classList.toggle('sel', t === 'freelancer');
+}
+
+function calcCand() {
+  const from = document.getElementById('c-from')?.value;
+  const to = document.getElementById('c-to')?.value;
+  if (!from || !to) return;
+  const d1 = new Date(from), d2 = new Date(to);
+  if (d2 <= d1) return;
+  let days = 0, cur = new Date(d1);
+  while (cur <= d2) { if (cur.getDay() !== 0 && cur.getDay() !== 6) days++; cur.setDate(cur.getDate() + 1); }
+  const total = days * 100;
+  document.getElementById('c-total').textContent = '£' + total.toLocaleString('en-GB', { minimumFractionDigits: 2 });
+  document.getElementById('c-days-lbl').textContent = days + ' working days × £100/day';
+  document.getElementById('c-total-bar').style.display = 'flex';
+  document.getElementById('c-dl').style.display = 'block';
+}
+
+function downloadInv() {
+  const name = document.getElementById('c-name')?.value || 'Candidate';
+  const from = document.getElementById('c-from')?.value;
+  const to = document.getElementById('c-to')?.value;
+  const total = document.getElementById('c-total')?.textContent || '£0.00';
+  const days = document.getElementById('c-days-lbl')?.textContent || '';
+  const num = 'SIT-' + Math.floor(Math.random() * 90000 + 10000);
+  const today = new Date().toLocaleDateString('en-GB');
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Invoice ${num}</title><style>body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;color:#1a1a2e}h1{color:#c8a45a}table{width:100%;border-collapse:collapse;margin:20px 0}th{background:#1a1e2e;color:#fff;padding:10px}td{padding:10px;border:1px solid #ddd}.total{font-size:20px;font-weight:bold;color:#c8a45a}.notice{background:#fffbf0;border:1px solid #c8a45a;padding:14px;border-radius:8px;font-size:13px;margin-top:20px}</style></head><body><h1>Invoice — Soyeb IT Services</h1><p><strong>Invoice No:</strong> ${num}</p><p><strong>Date:</strong> ${today}</p><p><strong>Name:</strong> ${name}</p><p><strong>Type:</strong> ${selType.charAt(0).toUpperCase()+selType.slice(1)}</p><p><strong>Period:</strong> ${from} to ${to}</p><table><tr><th>Description</th><th>Amount</th></tr><tr><td>IT Contract Work — ${days}</td><td>${total}</td></tr></table><p class="total">Total Due: ${total}</p><div class="notice">📧 Email to: <strong>Kathy@soyebitservices.com</strong> with approved timesheet.<br>💳 Payment within 7 working days.</div></body></html>`;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+  a.download = 'Invoice_' + num + '.html';
+  a.click();
+}
+
+function clientHTML() {
+  const rates = { Java: 80, Python: 100, 'UX Designer': 130, Android: 150, iOS: 200 };
+  return `
+    <h2 class="modal-h">Client Invoice</h2>
+    <p class="modal-sh">Calculate your billable amount and pay securely</p>
+    <div class="frow">
+      <div class="fg half"><label class="fl">From Date</label><input class="fi" id="cl-from" type="date" oninput="calcClient()"></div>
+      <div class="fg half"><label class="fl">To Date</label><input class="fi" id="cl-to" type="date" oninput="calcClient()"></div>
+    </div>
+    <div class="fg"><label class="fl">Service Type</label>
+      <select class="fi" id="cl-svc" onchange="calcClient()">
+        <option value="">— Select Service —</option>
+        <option value="Java">Java Development (£80/day)</option>
+        <option value="Python">Python Development (£100/day)</option>
+        <option value="UX Designer">UX Design (£130/day)</option>
+        <option value="Android">Android Development (£150/day)</option>
+        <option value="iOS">iOS Development (£200/day)</option>
+      </select>
+    </div>
+    <div class="total-bar" id="cl-total-bar">
+      <div><div class="total-label">INVOICE TOTAL</div><div style="font-size:11px;color:rgba(8,10,15,.5);margin-top:1px" id="cl-days-lbl"></div></div>
+      <div class="total-amt" id="cl-total">£0.00</div>
+    </div>
+    <a class="pay-link" id="cl-pay" href="https://www.paypal.com/ncp/payment/KABUJWMAJLC3J" target="_blank">💳 Pay Invoice Securely →</a>
+  `;
+}
+
+function calcClient() {
+  const from = document.getElementById('cl-from')?.value;
+  const to = document.getElementById('cl-to')?.value;
+  const svc = document.getElementById('cl-svc')?.value;
+  if (!from || !to || !svc) return;
+  const rates = { Java: 80, Python: 100, 'UX Designer': 130, Android: 150, iOS: 200 };
+  const rate = rates[svc]; if (!rate) return;
+  const d1 = new Date(from), d2 = new Date(to);
+  if (d2 <= d1) return;
+  let days = 0, cur = new Date(d1);
+  while (cur <= d2) { if (cur.getDay() !== 0 && cur.getDay() !== 6) days++; cur.setDate(cur.getDate() + 1); }
+  const total = days * rate;
+  document.getElementById('cl-total').textContent = '£' + total.toLocaleString('en-GB', { minimumFractionDigits: 2 });
+  document.getElementById('cl-days-lbl').textContent = days + ' working days × £' + rate + '/day (' + svc + ')';
+  document.getElementById('cl-total-bar').style.display = 'flex';
+  document.getElementById('cl-pay').style.display = 'block';
+}
+
+function openTSE(e) {
+  // Opens TSE eBook store - link is on the anchor tag itself
+}
+
+// ══════════════════════════════
+// INIT
+// ══════════════════════════════
+renderJobs();
 </script>
-
 </body>
 </html>
